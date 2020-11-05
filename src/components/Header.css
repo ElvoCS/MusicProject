@@ -1,0 +1,22 @@
+.header {
+
+}
+
+.headerContainer {
+ 
+}
+
+.header__logo {
+  padding: 10px;
+  padding-left: 15px;
+  width: 50px;
+  vertical-align: middle;
+  }
+
+.header__music {
+  color: white;
+  object-fit: contain;
+}
+.header__profile {
+  color: white;
+}
