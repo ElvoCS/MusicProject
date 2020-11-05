@@ -14,6 +14,7 @@
 }
 .header__music {
   color: white;
+  object-fit: contain;
 }
 .header__profile {
   color: white;
