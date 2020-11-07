@@ -25,7 +25,7 @@ function Header() {
                 <i class="fas fa-search  fa-lg" Style="color:#336bf2 "></i>
               </div>
               <div Style="flex: 20;" className="searchTextArea">
-                <input className="inputField" placeholder="Start typing to search a song" Style="padding-left:10px"></input>
+                <input className="inputField" placeholder="Start typing to search a song" Style="padding-left:0px"></input>
               </div>
             </div>
           </div>
