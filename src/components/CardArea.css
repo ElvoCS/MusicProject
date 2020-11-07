@@ -1,0 +1,14 @@
+.cardArea{
+ background-image: url("../res/bg.png"); 
+ background-repeat: repeat;
+ filter: blur(6px);
+ height: 100%;
+}
+
+
+.card {
+    width: 200px;
+    height: 200px;
+    background-color: white;
+
+}
