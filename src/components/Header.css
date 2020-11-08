@@ -10,7 +10,10 @@
   flex-direction: row;
   flex-flow: row;
   height:65px;
- 
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #336bf2;
 }
 
 .headerSearch {
@@ -49,8 +52,8 @@
 }
  .inputField {
    font-family: 'Helvetica', 'Arial', sans-serif;
-   border-width: 0px;
    font-size: 13pt;
+   border-width: 0px;
    width: 80%;
 
   }

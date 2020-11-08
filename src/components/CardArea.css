@@ -1,12 +1,9 @@
 .CardArea {
- position: fixed;
- display: flex;
+  display: flex;
  flex-direction: row;
  flex-flow: row wrap;
-
- margin-top: 300px;
- width: 100%;
-}
+  margin-top: 200px;
+  }
 
 .title {
     font-size: 20pt;
@@ -28,8 +25,7 @@
     flex: 1 auto;
     border-radius: 40px;
     display: flex;
-    overflow: hidden;
-    align-items: flex-start;
+     align-items: flex-start;
     justify-content: center;
 
     text-align: center;
