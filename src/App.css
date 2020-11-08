@@ -10,3 +10,11 @@
     right: 0;
     z-index: -1;
 }
+
+@font-face { 
+    font-family: customHelvetica; src: url('./fonts/HelveticaRoundedLTStd-Bd.otf');
+  }
+
+  @font-face { 
+    font-family: customHelvetica2; src: url('./fonts/HelveticaRoundedLTStd-BdCn.otf');
+}

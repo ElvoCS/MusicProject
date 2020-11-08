@@ -18,16 +18,15 @@
 } 
 
 .dataCard {
-
+    font-family: customHelvetica;
     width: 300px;
     margin: 30px;
     height: 200px;
     flex: 1 auto;
     border-radius: 40px;
     display: flex;
-     align-items: flex-start;
+    align-items: flex-start;
     justify-content: center;
-
     text-align: center;
  }
  
