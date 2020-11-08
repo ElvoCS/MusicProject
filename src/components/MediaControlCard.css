@@ -1,0 +1,5 @@
+.dataCard__mediaControlsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
