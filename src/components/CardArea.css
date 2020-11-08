@@ -1,13 +1,37 @@
-.cardArea{
- background-image: url("../res/bg.png"); 
- background-repeat: repeat;
- background-size: auto;
- filter: blur(3px);
- height: 100%;
+.CardArea {
+ position: fixed;
+ display: flex;
+ flex-direction: row;
+ flex-flow: row wrap;
+
+ margin-top: 300px;
+ width: 100%;
 }
 
-
-.card {
-    background-color: white;
-
+.title {
+    font-size: 20pt;
+    color: white;
 }
+
+.pos {
+    margin-bottom: 12;
+    color: lightgray;
+    font-size: 13pt;
+    
+} 
+
+.dataCard {
+
+    width: 300px;
+    margin: 30px;
+    height: 200px;
+    flex: 1 auto;
+    border-radius: 40px;
+    display: flex;
+    overflow: hidden;
+    align-items: flex-start;
+    justify-content: center;
+
+    text-align: center;
+ }
+ 
