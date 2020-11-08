@@ -28,8 +28,8 @@ function MediaControlCard() {
           </div>
         </CardContent>
 
-        <div className="dataCard__mediaControlsContainer">
-          <div className="dataCard_mediaControls">
+        <div className="mediaControls__container">
+          <div className="mediaControls">
             <IconButton className="previous">
               <SkipPreviousIcon />
             </IconButton>
