@@ -5,6 +5,7 @@ import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import { AppBar, Toolbar, IconButton } from "@material-ui/core";
 import logo from "../res/logo_icon.png"; // Tell webpack this JS file uses this image
 //#0452ff
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
@@ -12,11 +13,11 @@ function Header() {
       <AppBar position="static" styles style={{ background: "#336bf2" }}>
         <div className="headerContainer">
           <div className="headerLogo">
-            <IconButton style={{ padding: 8 }}>
-              <a href="./">
+            <Link to="/">
+              <IconButton style={{ padding: 8 }}>
                 <img src={logo} alt="Logo" className="header__logo" />
-              </a>
-            </IconButton>
+              </IconButton>
+            </Link>
           </div>
 
           <div className="headerSearch">
@@ -32,7 +33,9 @@ function Header() {
 
           <div className="headerNavigation">
             <IconButton className="far fa-heart fa-2x" size="medium"></IconButton>
-            <IconButton className="far fa-user-circle fa-2x" size="medium"></IconButton>
+            <Link to="/Profile">
+              <IconButton className="far fa-user-circle fa-2x" size="medium"></IconButton>
+            </Link>
           </div>
         </div>
       </AppBar>

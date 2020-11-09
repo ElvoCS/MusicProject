@@ -1,18 +1,23 @@
 import React from "react";
 import "./App.css";
 import Header from "./components/Header";
-import CardArea from "./components/CardArea";
-import Footer from "./components/Footer";
-import { Button, Card } from "@material-ui/core";
+import Song from "./pages/Song";
+import Profile from "./pages/Profile";
+import Home from "./pages/Home";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <div class="background-image"></div>
-      <Header />
-      <CardArea />
-      <Footer />
-    </div>
+    <Router>
+      <div className=" ">
+        <Header />
+        <Switch>
+          <Route path="/Profile" component={Profile} />
+          <Route path="/Song" component={Song} />
+          <Route path="/" exact component={Home} />
+        </Switch>
+      </div>
+    </Router>
   );
 }
 

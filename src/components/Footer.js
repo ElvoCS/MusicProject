@@ -11,7 +11,7 @@ function Footer() {
     <div>
       <footer>
         <p>Notify © 2020 Terry, Elvo, Carl &amp; Sarah </p>
-        <a href="./" Style="color:#336bf2;cursor:pointer;">
+        <a href="./" Style="color:#336bf2;text-decoration:none;cursor:pointer;">
           Terms of service
         </a>
       </footer>
