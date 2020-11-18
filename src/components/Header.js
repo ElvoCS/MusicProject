@@ -4,7 +4,6 @@ import MusicNoteIcon from "@material-ui/icons/MusicNote";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import { AppBar, Toolbar, IconButton } from "@material-ui/core";
 import logo from "../res/logo_icon.png"; // Tell webpack this JS file uses this image
-//#0452ff
 import { Link } from "react-router-dom";
 
 function Header() {
