@@ -1,5 +1,62 @@
-.homeConent {
-margin-top: 65px;
-margin-left: 15px;
-font-family: customHelvetica;
+.home_spash_container {
+  font-family: customHelvetica;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  flex-wrap: wrap;
+}
+
+.home_left {
+  flex: 1; /* flex-grow, flex-shrink, flex-basis */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  min-width: 300px;
+
+  display: flex;
+  align-items: left;
+  justify-content: left;
+  margin: 30px;
+}
+
+.home_right {
+  flex: 3; /* flex-grow, flex-shrink, flex-basis */
+  min-width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 10px;
+  font-size: 22px;
+}
+
+.big_logo {
+  width: 100%;
+  max-width: 400px;
+}
+
+#home_buttons {
+  margin: 5px;
+  width: 250px;
+  height: 60px;
+}
+
+.home_splash_card_area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.home_card_title {
+  font-size: 25px;
+}
+
+.dataCard_home {
+  min-width: 80%;
+  min-height: 300px;
 }

@@ -1,12 +1,15 @@
 import React from "react";
-import "../App.css";
+import "./Song.css";
+
 import CardArea from "../components/CardArea";
+import { Card } from "@material-ui/core";
 
 function Song() {
   return (
-    <div className="App">
-      <div class="background-image"></div>
-      <CardArea />
+    <div>
+      <div className="songContainer">
+        <CardArea />
+      </div>
     </div>
   );
 }

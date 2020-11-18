@@ -40,6 +40,16 @@ function CardArea() {
       <Card className="dataCard" Style="border-radius:30px;background-color: #336bf2">
         <h1 className={"title"}>This is a data card</h1>
       </Card>
+
+      <Card className="dataCard" Style="border-radius:30px;background-color: #336bf2">
+        <h1 className={"title"}>This is a data card</h1>
+      </Card>
+      <Card className="dataCard" Style="border-radius:30px;background-color: #336bf2">
+        <h1 className={"title"}>This is a data card</h1>
+      </Card>
+      <Card className="dataCard" Style="border-radius:30px;background-color: #336bf2">
+        <h1 className={"title"}>This is a data card</h1>
+      </Card>
     </div>
   );
 }

@@ -1,8 +1,7 @@
-footer {
+.footer {
   text-align: center;
   margin: 20px;
   font-size: 11pt;
   color: #336bf2;
   font-family: customHelvetica;
-  margin-top: 65px;
- }
+}
