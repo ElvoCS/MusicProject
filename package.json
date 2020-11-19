@@ -8,12 +8,24 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+<<<<<<< Updated upstream
     "bootstrap": "^4.5.3",
+=======
+    "axios": "^0.21.0",
+    "bootstrap": "^4.5.3",
+    "jquery": "^3.5.1",
+    "popper.js": "^1.16.1",
+>>>>>>> Stashed changes
     "react": "^16.14.0",
     "react-bootstrap": "^1.4.0",
     "react-dom": "^16.14.0",
+<<<<<<< Updated upstream
     "react-router-dom": "^5.2.0",
     "react-scripts": "^3.4.4"
+=======
+    "react-scripts": "^3.4.4",
+    "spotify": "^0.3.0"
+>>>>>>> Stashed changes
   },
   "scripts": {
     "start": "react-scripts start",
