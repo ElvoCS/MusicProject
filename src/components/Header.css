@@ -1,6 +1,7 @@
 .header {
   width: 100%;
   z-index: 10;
+  position: fixed;
   top: 0;
 }
 
@@ -10,10 +11,11 @@
   flex-flow: row;
   width: 100%;
   background-color: #336bf2;
+  height: 55px;
 }
 
 .headerSearch {
-  flex: 2;
+  flex: 3;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -26,21 +28,31 @@
   justify-content: flex-end;
   padding-right: 1%;
 }
+.searchTextArea {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  height: 100%;
+}
 
 .headerLogo {
   flex: 1;
-  padding-left: 1%;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  overflow: visible;
+  margin-left: 10px;
 }
 
 .searchBar {
   width: 80%;
   min-width: 110px;
-  height: 40px;
+  height: 37px;
   background-color: white;
   border-radius: 40px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: left;
 }
 
 .searchIconContainer {
@@ -48,18 +60,37 @@
 }
 .inputField {
   font-family: customHelvetica;
-  font-size: 13pt;
+  font-size: 11pt;
   border-width: 0px;
   width: 80%;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  height: 80%;
 }
 input:focus {
   outline: none;
 }
 
-.header__logo {
-  width: 110px;
+.header__logo_header {
+  content: url("../res/logo_icon.png");
+  height: 40px;
+  padding: 0px;
+}
+@media (max-width: 600px) {
+  .header__logo_header {
+    content: url("../res/icon.png");
+    height: 40px;
+    padding: 0px;
+  }
 }
 .far.fa-heart,
 .far.fa-user-circle {
   color: white;
+}
+
+.header-links {
+  text-decoration: none;
+  color: black;
 }
