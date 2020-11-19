@@ -8,13 +8,11 @@ import logo from "../res/logo_icon.png"; // Tell webpack this JS file uses this 
 
 function Footer() {
   return (
-    <div>
-      <footer>
-        <p>Notify © 2020 Terry, Elvo, Carl &amp; Sarah </p>
-        <a href="./" Style="color:#336bf2;text-decoration:none;cursor:pointer;">
-          Terms of service
-        </a>
-      </footer>
+    <div className="footer">
+      <p>Notify © 2020 Terry, Elvo, Carl &amp; Sarah </p>
+      <a href="./" Style="color:#336bf2;text-decoration:none;cursor:pointer;">
+        Terms of service
+      </a>
     </div>
   );
 }

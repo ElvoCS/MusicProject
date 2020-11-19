@@ -10,14 +10,20 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 function App() {
   return (
     <Router>
-      <div className=" ">
+      <div className="mainBodyContainer">
         <Header />
-        <Switch>
-          <Route path="/Profile" component={Profile} />
-          <Route path="/Song" component={Song} />
-          <Route path="/" exact component={Home} />
-        </Switch>
-        <Footer />
+
+        <div className="bodyFlex">
+          <Switch>
+            <Route path="/Profile" component={Profile} />
+            <Route path="/Song" component={Song} />
+            <Route path="/" exact component={Home} />
+          </Switch>
+        </div>
+
+        <div className="footerFlex">
+          <Footer />
+        </div>
       </div>
     </Router>
   );
