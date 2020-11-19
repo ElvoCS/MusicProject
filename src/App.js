@@ -47,26 +47,23 @@ const App = () => {
   const loadElements = (e) => {
     getMostPopular();
     for (var i = 0; i < tracks.listOfTracksFromAPI.length; i++) {
-      //elements.push(tracks.listOfTracksFromAPI[i].track);
-      setmusicData(tracks.listOfTracksFromAPI[i].track);
+      elements.push(tracks.listOfTracksFromAPI[i].track);
     }
+
+    setmusicData(elements);
     console.log(elements);
   };
 
   return (
-    <div className="container" onLoad={getMostPopular}>
+    <div className="container">
       <div className="col-sm-6 row form-group px-0">
         <button onClick={loadElements} className="btn btn-success col-sm-12">
           load elements
         </button>
 
-        <div Style="background-color: cream; width:100%; height:30%">
-          {elements.map((data, id) => {
-            return (
-              <div key={id}>
-                <h2>{data.name}</h2>
-              </div>
-            );
+        <div>
+          {musicData.map((data, id) => {
+            return <Detail track={data} key={id} />;
           })}
         </div>
       </div>
