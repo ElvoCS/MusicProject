@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import bigLogo from "../res/logo_big.png"; // Tell webpack this JS file uses this image
 import music from "../res/music.png"; // Tell webpack this JS file uses this image
 import data from "../res/data.png"; // Tell webpack this JS file uses this image
+import MostPopularSongs from "../components/MostPopularSongs";
 
 function Home() {
   return (
@@ -50,7 +51,10 @@ function Home() {
 
       <div className="home_splash_card_area">
         <Card className="dataCard dataCard_home" Style="border-radius:30px;color: black">
-          <h1 className={"home_card_title"}>Most Popular Songs</h1>
+          <div className="home_card_title">
+            <h4 Style="margin:5px">Most Popular Songs</h4>
+          </div>
+          <MostPopularSongs />
         </Card>
       </div>
     </div>

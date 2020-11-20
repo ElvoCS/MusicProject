@@ -40,7 +40,7 @@
 }
 
 .big_logo {
-  width: 50%;
+  width: 30%;
   max-width: 300px;
 }
 
@@ -53,20 +53,27 @@
 .home_splash_card_area {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
-  margin-left: 5%;
-  margin-right: 5%;
+  margin-left: 2%;
+  margin-right: 2%;
 }
 
 .home_card_title {
   font-size: 25px;
+  flex: 1;
+  padding: 0px;
+  margin: 0px;
 }
 
 .dataCard_home {
   width: 100%;
-  min-height: 300px;
   padding: 10px;
+  min-height: 435px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .info_container {
@@ -78,21 +85,17 @@
   text-align: center;
   flex-wrap: wrap;
 
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin-top: 10px;
 }
 .info_container_div {
   display: flex;
   flex: 1;
   padding: 20px;
+  padding-bottom: 0px;
   font-family: customHelvetica;
   align-items: center;
   text-align: center;
   justify-content: center;
   flex-direction: column;
   min-width: 300px;
-}
-
-.info_container_div > h2 {
-  padding: 5px;
 }
