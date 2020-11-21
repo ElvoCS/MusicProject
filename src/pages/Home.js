@@ -32,18 +32,18 @@ function Home() {
 
       <div className="info_container">
         <div className="info_container_div">
-          <div Style="flex: 2">
+          <div className="home_info_container_left">
             <img src={music} alt="Music" className="" height="100"></img>
-          </div>
-          <div Style="flex:1">
-            <h3>Listen to your favourite music.</h3>
+            <div Style="width:200px">
+              <h3>Listen to your favourite music.</h3>
+            </div>
           </div>
         </div>
         <div className="info_container_div">
-          <div Style="flex: 2">
-            <img src={data} alt="Data" className="" height="100" Style=" padding-left:20px;"></img>
+          <div Style="home_info_container_left">
+            <img src={data} alt="Data" className="" height="100" Style=" padding-left:10px;"></img>
           </div>
-          <div Style="flex:1">
+          <div Style="width:200px">
             <h3>Get interesting data and facts about the artist.</h3>
           </div>
         </div>

@@ -66,6 +66,14 @@
   margin: 0px;
 }
 
+.home_info_container_left {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .dataCard_home {
   width: 100%;
   padding: 10px;
@@ -74,24 +82,26 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin: 10px;
 }
 
 .info_container {
   display: flex;
   font-family: customHelvetica;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   flex-direction: row;
   text-align: center;
   flex-wrap: wrap;
 
-  margin-top: 10px;
+  margin-top: 50px;
 }
 .info_container_div {
   display: flex;
   flex: 1;
   padding: 20px;
   padding-bottom: 0px;
+  padding-top: 0px;
   font-family: customHelvetica;
   align-items: center;
   text-align: center;
