@@ -1,9 +1,9 @@
 .profileConent {
-margin-top: 65px;
-margin-left: 15px;
-font-family: customHelvetica;
+  margin-top: 65px;
+  margin-left: 15px;
+  font-family: customHelvetica;
 }
-.Location{
+.Location {
   font-family: customHelvetica;
   display: flex;
   align-items: center;
@@ -11,30 +11,31 @@ font-family: customHelvetica;
   height: 100%;
   flex-wrap: wrap;
 }
-.Username{
-           font-family: customHelvetica;
-           display: flex;
-           align-items: center;
-           justify-content: center;
-           height: 100%;
-           flex-wrap: wrap;
-         }
-.updateProfile{    font-family: customHelvetica;
-                          align-items: center;
-                          height: 100%;
-                          flex-wrap: wrap;
-                          color: #988bf2;
-                              justifyContent: 'center';
-                                alignItems: 'center';
+.Username {
+  font-family: customHelvetica;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  flex-wrap: wrap;
+}
+.updateProfile {
+  font-family: customHelvetica;
+  align-items: center;
+  height: 100%;
+  flex-wrap: wrap;
+  color: #988bf2;
+  justifycontent: "center";
+  alignitems: "center";
 }
 .header__logo {
   width: 110px;
 }
-.popularSongs{
-display: flex;
-align-items: center;
-justify-content: center;
-flex-direction: column;
+.popularSongs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .home_card_title {
@@ -42,6 +43,6 @@ flex-direction: column;
 }
 
 .dataCard_home {
-  min-width: 80%;
+  max-width: 80%;
   min-height: 300px;
 }

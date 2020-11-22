@@ -1,0 +1,12 @@
+.songs_container {
+  flex: 30;
+  display: flex;
+  font-family: customHelvetica;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: row;
+  width: 100%;
+  flex-wrap: wrap;
+  overflow: scroll;
+  overflow-x: hidden;
+}
