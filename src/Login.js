@@ -1,8 +1,11 @@
 import React from 'react';
 import fire from './config/fire';
+// import "./Home.css";
+import { Button, IconButton, Card } from "@material-ui/core";
 
 class Login extends React.Component {
 
+    // Login with email and password
     login() {
         const email = document.querySelector("#email").value;
         const password = document.querySelector("#password").value;
@@ -14,6 +17,7 @@ class Login extends React.Component {
         })
     }
 
+    // Sign up with email and password
     signUp() {
         const email = document.querySelector("#email").value;
         const password = document.querySelector("#password").value;
@@ -25,34 +29,18 @@ class Login extends React.Component {
         })
     }
 
-    // Sign into Firebase using popup auth & Google as the identity provider
-    // signInWithGoogle() {
-    //     var provider = new fire.auth.GoogleAuthProvider();
-    //     fire.auth().signInWithPopup(provider);
-    // }
+    // Sign in with Google Authentication
+    signInWithGoogle() {
+        var googleProvider = new fire.auth.GoogleAuthProvider();
+        fire.auth().signInWithPopup(googleProvider);
+    }
 
-    // // Returns the signed-in user's profiler pic URL
-    // getProfilerPicUrl() {
-    //     return fire.auth().current
-    // }
 
     render() {
         return (
-            // <div style={{ textAlign: 'center' }}>
-            //     <div>
-            //         <div>Email</div>
-            //         <input id="email" placeholder="Enter Email" type="text" />
-            //     </div>
-            //     <div>
-            //         <div>Password</div>
-            //         <input id="password" placeholder="Enter Password" type="text" />
-            //     </div>
-            //     <button style={{ margin: '10px' }} onClick={this.login}>Login</button>
-            //     <button style={{ margin: '10px' }} onClick={this.signUp}>Sign Up</button>
-            // </div>
 
-            <div style={{ textAlign: 'center' }}>
-                <button style={{ margin: '10px' }}>Sign in with Google</button>
+            <div className="Home" style={{ textAlign: 'center' }}>
+                <button style={{ margin: '10px' }} onClick={this.signInWithGoogle}>Sign in with Google</button>
                 <p>OR</p>
                 <div style={{ padding: '5px' }}>
                     <input id="email" placeholder="Enter Email" type="text" />
@@ -60,7 +48,9 @@ class Login extends React.Component {
                 <div style={{ padding: '5px' }}>
                     <input id="password" placeholder="Enter Password" type="text" />
                 </div>
-                <button style={{ margin: '10px' }} onClick={this.signUp}>Create an Account</button>
+                <div>
+                    <button style={{ margin: '10px' }} onClick={this.login}>Login</button>
+                </div>
             </div>
         )
     }
