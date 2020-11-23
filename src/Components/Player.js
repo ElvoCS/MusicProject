@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
+import music from "./music.png";
 import "./Player.css";
 
 class Player extends Component {
@@ -159,7 +159,7 @@ class Player extends Component {
     return (
       <div className="Player">
         <header className="Player-header">
-          <img src={logo} className="App-logo" alt="logo" />
+          <img src={music} className="App-logo" alt="logo" />
           {error && <p>Error: {error}</p>}
           {loggedIn ? (
             <div>
