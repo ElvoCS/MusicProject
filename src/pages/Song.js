@@ -1,7 +1,7 @@
 import React from "react";
 import "./Song.css";
 
-import CardArea from "../components/CardArea";
+import CardArea from "../Components/CardArea";
 import { Card } from "@material-ui/core";
 
 function Song() {
