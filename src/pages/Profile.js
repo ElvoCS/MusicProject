@@ -3,15 +3,24 @@ import "./Profile.css";
 import LocationOnIcon from "@material-ui/icons/LocationOn";
 import PermIdentityIcon from "@material-ui/icons/PermIdentity";
 import { Button, Card } from "@material-ui/core";
-import logo from "../res/logo_icon.png"; // Tell webpack this JS file uses this image
+import ReactRoundedImage from "react-rounded-image";
+import profilePic from "../res/profile-pic.jpg"; // Place Holder
 
 function Profile() {
   return (
     <div className="Profile">
-      <div className="profile_splash_container">
-        <div className="profilePic"></div>
+      <div className="profile_container">
 
         <div className="UserInfo">
+        <div className="ProfilePic">
+                                          <ReactRoundedImage
+                                            image={profilePic}
+                                            roundedColor="#fdfcfc"
+                                            imageWidth="150"
+                                            imageHeight="150"
+                                            roundedSize="15"
+                                          />
+                                          </div>
           <div className="Location">
             <LocationOnIcon fontSize="medium"></LocationOnIcon>
             <p>Dublin</p>
@@ -20,7 +29,7 @@ function Profile() {
             <PermIdentityIcon fontSize="medium"></PermIdentityIcon>
             <p>Carl Egan</p>
           </div>
-          <div></div>
+
 
           <div className="popularSongs">
             <Card className="dataCard dataCard_home" Style="border-radius:30px;color: #336bf2">
