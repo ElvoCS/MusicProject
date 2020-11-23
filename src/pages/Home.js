@@ -43,6 +43,7 @@ function Home() {
           </div>
         </div>
       </div>
+
       <div className="player_container">
         <Player />
       </div>
