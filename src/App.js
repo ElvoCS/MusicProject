@@ -21,9 +21,7 @@ function App() {
             <Route path="/" exact component={Home} />
           </Switch>
         </div>
-        <div>
-          <Player />
-        </div>
+
         <div className="footerFlex">
           <Footer />
         </div>

@@ -6,6 +6,7 @@ import bigLogo from "../res/logo_big.png"; // Tell webpack this JS file uses thi
 import music from "../res/music.png"; // Tell webpack this JS file uses this image
 import data from "../res/data.png"; // Tell webpack this JS file uses this image
 import MostPopularSongs from "../Components/MostPopularSongs";
+import Player from "../Components/Player";
 
 function Home() {
   return (
@@ -41,6 +42,9 @@ function Home() {
             </Button>
           </div>
         </div>
+      </div>
+      <div className="player_container">
+        <Player />
       </div>
 
       <div className="info_container">

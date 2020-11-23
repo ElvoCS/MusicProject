@@ -51,3 +51,8 @@
   background-color: #cce3ff;
   background-color: white;
 }
+.player__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
