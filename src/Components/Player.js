@@ -1,6 +1,11 @@
 import React, { Component } from "react";
 import music from "./music.png";
 import "./Player.css";
+import PlayCircleOutlineIcon from "@material-ui/icons/PlayCircleOutline";
+import PauseCircleOutlineIcon from "@material-ui/icons/PauseCircleOutline";
+import SkipPreviousIcon from "@material-ui/icons/SkipPrevious";
+import SkipNextIcon from "@material-ui/icons/SkipNext";
+import VpnKeyIcon from "@material-ui/icons/VpnKey";
 
 class Player extends Component {
   constructor(props) {
@@ -103,7 +108,7 @@ class Player extends Component {
       clearInterval(this.playerCheckInterval);
       // create a new player
       this.player = new window.Spotify.Player({
-        name: "Elvo's Spotify Player",
+        name: "Notify's Spotify Player",
         getOAuthToken: (cb) => {
           cb(token);
         },
@@ -158,25 +163,51 @@ class Player extends Component {
     } = this.state;
     return (
       <div className="Player">
-        <header className="Player-header">
-          <img src={music} className="App-logo" alt="logo" />
+        <header className="Player_header">
+          <img src={music} className="Player_logo" alt="logo" />
           {error && <p>Error: {error}</p>}
           {loggedIn ? (
-            <div>
+            <div className="Player_songArtist">
               <p>Artist: {artistName}</p>
               <p>Track: {trackName}</p>
               <p>Album: {albumName}</p>
               <p>
-                <button onClick={() => this.onPrevClick()}>Previous</button>
-                <button onClick={() => this.onPlayClick()}>
-                  {playing ? "Pause" : "Play"}
+                <button
+                  Style={
+                    "color: transparent; background-color: transparent; border-color: transparent; cursor: default;"
+                  }
+                  onClick={() => this.onPrevClick()}
+                >
+                  <SkipPreviousIcon
+                    className="svg_icons"
+                    style={{ color: "white" }}
+                  />
                 </button>
-                <button onClick={() => this.onNextClick()}>Next</button>
+                <button
+                  Style={
+                    "color: transparent; background-color: transparent; border-color: transparent; cursor: default;"
+                  }
+                  onClick={() => this.onPlayClick()}
+                >
+                  {playing ? (
+                    <PauseCircleOutlineIcon className="svg_icons" />
+                  ) : (
+                    <PlayCircleOutlineIcon className="svg_icons" />
+                  )}
+                </button>
+                <button
+                  Style={
+                    "color: transparent; background-color: transparent; border-color: transparent; cursor: default;"
+                  }
+                  onClick={() => this.onNextClick()}
+                >
+                  <SkipNextIcon className="svg_icons" />
+                </button>
               </p>
             </div>
           ) : (
             <div>
-              <p className="App-intro">
+              <p className="Player_intro">
                 Enter your Spotify access token. Get it from{" "}
                 <a href="https://beta.developer.spotify.com/documentation/web-playback-sdk/quick-start/#authenticating-with-spotify">
                   here
@@ -185,13 +216,21 @@ class Player extends Component {
               </p>
               <p>
                 <input
+                  className="input"
                   type="text"
                   value={token}
                   onChange={(e) => this.setState({ token: e.target.value })}
                 />
               </p>
               <p>
-                <button onClick={() => this.handleLogin()}>Go</button>
+                <button
+                  Style={
+                    " background-color: transparent; border-color: transparent; cursor: default;"
+                  }
+                  onClick={() => this.handleLogin()}
+                >
+                  <VpnKeyIcon className="svg_icons" />
+                </button>
               </p>
             </div>
           )}
