@@ -209,7 +209,10 @@ class Player extends Component {
             <div>
               <p className="Player_intro">
                 Enter your Spotify access token. Get it from{" "}
-                <a href="https://beta.developer.spotify.com/documentation/web-playback-sdk/quick-start/#authenticating-with-spotify">
+                <a
+                  href="https://beta.developer.spotify.com/documentation/web-playback-sdk/quick-start/#authenticating-with-spotify"
+                  target="blank"
+                >
                   here
                 </a>
                 .
