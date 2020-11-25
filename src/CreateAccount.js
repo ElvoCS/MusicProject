@@ -9,37 +9,29 @@ import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import Fade from "@material-ui/core/Fade";
 
-class Login extends React.Component {
+class CreateAccount extends React.Component {
 
-
-    // Login with email and password
-    login() {
+    // Sign up with email and password
+    signUp() {
         const email = document.querySelector("#email").value;
         const password = document.querySelector("#password").value;
 
-        fire.auth().signInWithEmailAndPassword(email, password).then((u) => {
-            console.log("Successfully Logged In");
+        fire.auth().createUserWithEmailAndPassword(email, password).then((u) => {
+            console.log("Successfully Signed In");
         }).catch((err) => {
             console.log("Error: " + err.toString());
         })
     }
 
-    // // Sign in with Google Authentication
-    // signInWithGoogle() {
-    //     var googleProvider = new fire.auth.GoogleAuthProvider();
-    //     fire.auth().signInWithPopup(googleProvider);
-    // }
 
 
     render() {
         return (
-            <div className="Home" style={{ textAlign: 'center' }}>
-                <div id="loginPage">
-                    <Button variant="contained" id="home_buttons" Style="font-family: customHelvetica; width: fit-content">
-                        Sign in with Google
-                    </Button>
-                    <div class="g-signin2"></div>
-                    <p>OR</p>
+            <div className="Home" style={{ textAlign: 'center'}}>
+
+                <div id="createAccount">
+                    <br></br>
+                    <br></br>
                     <div style={{display: 'flex', textAlign: 'center', justifyContent: 'center'}}>
                         <input className="inputField" placeholder="Enter Email" type="text"></input>
                     </div>
@@ -47,8 +39,9 @@ class Login extends React.Component {
                     <div style={{display: 'flex', textAlign: 'center', justifyContent: 'center'}}>
                         <input className="inputField" placeholder="Enter Password" type="password"></input>
                     </div>
+                    <br></br>
                     <Button variant="contained" id="home_buttons" Style="background-color:#336bf2; color:white; font-family: customHelvetica;">
-                        Log In
+                        Create Account
                     </Button>
                 </div>
             </div>
@@ -56,4 +49,4 @@ class Login extends React.Component {
     }
 }
 
-export default Login;
+export default CreateAccount;

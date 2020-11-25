@@ -8,12 +8,9 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
-<<<<<<< HEAD
-    "firebase": "^8.0.1",
-=======
     "axios": "^0.21.0",
->>>>>>> 4e5e31ec286dc718a889ae3e4e95b27570cb90ec
     "bootstrap": "^4.5.3",
+    "firebase": "^8.0.1",
     "react": "^16.14.0",
     "react-bootstrap": "^1.4.0",
     "react-dom": "^16.14.0",

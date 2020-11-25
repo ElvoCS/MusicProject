@@ -4,6 +4,7 @@ import MusicNoteIcon from "@material-ui/icons/MusicNote";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import { AppBar, Toolbar, IconButton, Icon } from "@material-ui/core";
 import { Link } from "react-router-dom";
+// import fire from "./config/fire";
 
 import Button from "@material-ui/core/Button";
 import Menu from "@material-ui/core/Menu";
@@ -36,6 +37,10 @@ function Header() {
     document.getElementById("heart-button").style.color = "white";
     setAnchorEl1(null);
   };
+
+  // const logOut = () => {
+  //   fire.auth().signOut();
+  // }
 
   return (
     <div className="header">
