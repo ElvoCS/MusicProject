@@ -13,34 +13,21 @@ class Login extends React.Component {
 
 
     // Login with email and password
-    login() {
+    signUp() {
         const email = document.querySelector("#email").value;
         const password = document.querySelector("#password").value;
 
-        fire.auth().signInWithEmailAndPassword(email, password).then((u) => {
-            console.log("Successfully Logged In");
+        fire.auth().createUserWithEmailAndPassword(email, password).then((u) => {
+            console.log("Successfully Signed Up");
         }).catch((err) => {
             console.log("Error: " + err.toString());
         })
     }
 
-    // Sign in with Google Authentication
-    signInWithGoogle() {
-        var googleProvider = new fire.auth.GoogleAuthProvider();
-        fire.auth().signInWithPopup(googleProvider);
-    }
-
-
     render() {
         return (
             <div className="Home" style={{ textAlign: 'center' }}>
                 <div id="loginPage">
-                    <Button variant="contained" id="home_buttons" Style="font-family: customHelvetica; width: fit-content"
-                        onClick={this.signInWithGoogle}>
-                        Sign in with Google
-                    </Button>
-                    <div class="g-signin2"></div>
-                    <p>OR</p>
                     <div style={{ display: 'flex', textAlign: 'center', justifyContent: 'center' }}>
                         <input className="inputField" placeholder="Enter Email" type="text"></input>
                     </div>
@@ -49,8 +36,8 @@ class Login extends React.Component {
                         <input className="inputField" placeholder="Enter Password" type="password"></input>
                     </div>
                     <Button variant="contained" id="home_buttons" Style="background-color:#336bf2; color:white; font-family: customHelvetica;"
-                        onClick={this.login}>
-                        Log In
+                        onClick={this.signUp}>
+                        Sign Up
                     </Button>
                 </div>
             </div>
