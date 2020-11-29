@@ -8,7 +8,7 @@ const Detail = ({ track }) => {
       <label htmlFor={track.name} className="song_name">
         {track.name}
       </label>
-      <label htmlFor={track.artists[0].name} className="artistName">
+      <label htmlFor={track.artists[0].name} className="artist_name">
         {track.artists[0].name}
       </label>
     </div>

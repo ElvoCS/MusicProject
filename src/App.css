@@ -26,11 +26,10 @@
   align-items: flex-start;
   justify-content: flex-start;
   background-color: #f0f2f5;
-  margin-top: 60px;
+  padding-top: 55px;
 }
 
 .headerFlex {
-  min-height: 65px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -40,7 +39,6 @@
 
 .bodyFlex {
   flex: 1;
-  flex-shrink: 0;
   width: 100%;
 }
 

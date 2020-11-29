@@ -5,7 +5,7 @@
   align-items: flex-start;
   justify-content: flex-start;
   flex-direction: row;
-  width: 100%;
+  width: 95%;
   flex-wrap: wrap;
   overflow: scroll;
   overflow-x: hidden;

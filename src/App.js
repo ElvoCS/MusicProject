@@ -12,13 +12,12 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 function App() {
   return (
     <Router>
+      <Header />
       <div className="mainBodyContainer">
-        <Header />
-
         <div className="bodyFlex">
           <Switch>
-            <Route path="/Profile" component={Profile} />
-            <Route path="/Song" component={Song} />
+            <Route path="/profile" component={Profile} />
+            <Route path="/song" component={Song} />
             <Route path="/" exact component={Home} />
             <Route path="/Login" exact component={Login} />
             <Route path="/CreateAccount" exact component={CreateAccount} />
