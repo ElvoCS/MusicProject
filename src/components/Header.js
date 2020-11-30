@@ -40,12 +40,6 @@ function Header() {
     setAnchorEl1(null);
   };
 
-<<<<<<< Updated upstream
-  // const logOut = () => {
-  //   fire.auth().signOut();
-  // }
-
-=======
   const handleChange = (e) => {
     setValue(e.target.value);
   };
@@ -68,7 +62,6 @@ function Header() {
     //search apis for a song
     //retrieve song page with that data as an input
   }
->>>>>>> Stashed changes
   return (
     <AppBar position="static">
       <div className="headerContainer">
