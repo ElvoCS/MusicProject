@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Detail from "./Detail";
-import { Credentials } from "../credentials";
+import { Credentials } from "../Credentials";
 import axios from "axios";
 import "./MostPopularSongs.css";
 

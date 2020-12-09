@@ -40,6 +40,13 @@ function Header() {
     setAnchorEl1(null);
   };
 
+<<<<<<< Updated upstream
+=======
+  // const logOut = () => {
+  //   fire.auth().signOut();
+  // }
+
+>>>>>>> Stashed changes
   const handleChange = (e) => {
     setValue(e.target.value);
   };

@@ -1,17 +1,16 @@
 import React, { Component } from "react";
 import "./App.css";
-import Login from "./Login.js";
-import HomeLogin from "./HomeLogin.js";
-import fire from './config/fire';
-
+import Login from ".//pages/Login";
+import HomeLogin from ".//components/HomeLogin";
+import fire from "./config/fire";
 
 class AppFunction extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      user: null
-    }
+      user: null,
+    };
 
     this.authListener = this.authListener.bind(this);
   }
@@ -22,23 +21,17 @@ class AppFunction extends Component {
 
   authListener() {
     fire.auth().onAuthStateChanged((user) => {
-      if(user) {
+      if (user) {
         this.setState({ user });
-      }
-      else {
+      } else {
         this.setState({ user: null });
       }
-    })
+    });
   }
 
   render() {
-    return (
-      <div>
-        {this.state.user ? (<HomeLogin/>) : (<Login/>)}
-      </div>
-    )
+    return <div>{}</div>;
   }
 }
-
 
 export default AppFunction;

@@ -5,8 +5,8 @@ import Song from "./pages/Song";
 import Footer from "./components/Footer";
 import Profile from "./pages/Profile";
 import Home from "./pages/Home";
-import Login from "./Login";
-import CreateAccount from "./CreateAccount";
+import Login from "./pages/Login";
+import CreateAccount from "./pages/CreateAccount";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
@@ -18,9 +18,9 @@ function App() {
           <Switch>
             <Route path="/profile" component={Profile} />
             <Route path="/song" component={Song} />
-            <Route path="/" exact component={Home} />
             <Route path="/Login" exact component={Login} />
             <Route path="/CreateAccount" exact component={CreateAccount} />
+            <Route path="/" exact component={Home} />
           </Switch>
         </div>
 
