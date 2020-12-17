@@ -1,14 +1,14 @@
 import React from "react";
 import "./App.css";
-import Header from "./Components/Header";
+import Header from "./components/Header";
 import Song from "./pages/Song";
-import Footer from "./Components/Footer";
+import Footer from "./components/Footer";
 import Profile from "./pages/Profile";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import CreateAccount from "./pages/CreateAccount";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Player from "./Components/Player";
+import Player from "./components/Player";
 
 function App() {
   return (

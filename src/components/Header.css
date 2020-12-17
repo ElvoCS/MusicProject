@@ -9,7 +9,9 @@
   top: 0px;
   height: 55px;
 }
-
+a {
+  padding: 0;
+}
 .headerSearch {
   flex: 3;
   display: flex;

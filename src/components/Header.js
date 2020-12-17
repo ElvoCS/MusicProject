@@ -70,8 +70,8 @@ function Header() {
     <AppBar position="static">
       <div className="headerContainer">
         <div className="headerLogo">
-          <Link to="/" Style=" overflow:hidden;">
-            <IconButton style={{ padding: 20 }} Style=" overflow:visible">
+          <Link to="/" Style=" overflow:hidden; padding: 0px;">
+            <IconButton style={{ padding: 0 }} Style=" overflow:visible">
               <img alt="Logo" className="header__logo_header" />
             </IconButton>
           </Link>

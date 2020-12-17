@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Image } from "react";
 import "./SongCard.css";
 import { Card } from "@material-ui/core";
 
