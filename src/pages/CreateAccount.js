@@ -1,5 +1,5 @@
 import "./Login.css";
-import React from "react";
+import React, { useState } from "react";
 import fire from "../config/fire";
 import { AppBar, Toolbar, IconButton, Icon } from "@material-ui/core";
 import { Link } from "react-router-dom";
@@ -11,16 +11,17 @@ import MenuItem from "@material-ui/core/MenuItem";
 import Fade from "@material-ui/core/Fade";
 
 function CreateAccount() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   // Sign up with email and password
   const signUp = () => {
-    const email = document.querySelector("#email").value;
-    const password = document.querySelector("#password").value;
-
     fire
       .auth()
       .createUserWithEmailAndPassword(email, password)
       .then((u) => {
         console.log("Successfully Signed In");
+        window.location.href = "./";
       })
       .catch((err) => {
         console.log("Error: " + err.toString());
@@ -34,15 +35,15 @@ function CreateAccount() {
         <h1 Style="font-family:customHelvetica;">Create An Account</h1>
         <br></br>
         <div style={{ display: "flex", textAlign: "center", justifyContent: "center" }}>
-          <input className="input_login" placeholder="Enter Email" type="text"></input>
+          <input className="input_login" placeholder="Enter Email" type="text" onChange={(e) => setEmail(e.target.value)}></input>
         </div>
         <br></br>
         <div style={{ display: "flex", textAlign: "center", justifyContent: "center" }}>
-          <input className="input_login" placeholder="Enter Password" type="password"></input>
+          <input className="input_login" placeholder="Enter Password" id="password" type="password" onChange={(e) => setPassword(e.target.value)}></input>
         </div>
         <br></br>
         <div style={{ display: "flex", textAlign: "center", justifyContent: "center", alignItems: "center", marginBottom: 50 }}>
-          <Button variant="contained" id="home_buttons" Style="background-color:#336bf2; color:white; font-family: customHelvetica; ">
+          <Button onClick={() => signUp()} variant="contained" id="home_buttons" Style="background-color:#336bf2; color:white; font-family: customHelvetica;">
             Create Account
           </Button>
           <Button variant="contained" id="home_buttons" Style=" width: 220px;height:35px;font-family: customHelvetica;" onClick={() => (window.location.href = "./Login")}>

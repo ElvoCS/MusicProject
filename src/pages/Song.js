@@ -8,8 +8,9 @@ import SongCard from "../components/SongCard";
 function Song() {
   return (
     <div className="songContainer">
-      <SongCard title="example" />
-      <SongCard title="test" />
+      <SongCard title="Song Data" />
+      <SongCard title="Song Data" />
+      <SongCard title="Song Data" />
     </div>
   );
 }

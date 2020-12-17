@@ -1,21 +1,23 @@
 import "./Login.css";
-import React from "react";
+import React, { useState } from "react";
 import fire from "../config/fire";
 import { AppBar, Toolbar, IconButton, Icon } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 
 function Login() {
-  // Login with email and password
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   const login = () => {
-    const email = document.querySelector("#email").value;
-    const password = document.querySelector("#password").value;
+    console.log("test");
 
     fire
       .auth()
       .signInWithEmailAndPassword(email, password)
       .then((u) => {
         console.log("Successfully Logged In");
+        window.location.href = "./";
       })
       .catch((err) => {
         console.log("Error: " + err.toString());
@@ -29,20 +31,15 @@ function Login() {
         <h1 Style="font-family:customHelvetica;">Login</h1>
         <br />
 
-        <Button variant="contained" id="home_buttons" Style="font-family: customHelvetica; width: fit-content">
-          Sign in with Google
-        </Button>
-        <div class="g-signin2"></div>
-        <p Style="font-family:customHelvetica;">OR</p>
         <div style={{ display: "flex", textAlign: "center", justifyContent: "center" }}>
-          <input className="input_login" placeholder="Enter Email" type="text"></input>
+          <input className="input_login" placeholder="Enter Email" type="text" onChange={(e) => setEmail(e.target.value)}></input>
         </div>
         <br></br>
         <div style={{ display: "flex", textAlign: "center", justifyContent: "center" }}>
-          <input Style="margin-bottom:30px;" className="input_login" placeholder="Enter Password" type="password"></input>
+          <input Style="margin-bottom:30px;" className="input_login" placeholder="Enter Password" type="password" onChange={(e) => setPassword(e.target.value)}></input>
         </div>
         <div style={{ display: "flex", textAlign: "center", justifyContent: "center", alignItems: "center", marginBottom: 50 }}>
-          <Button variant="contained" id="home_buttons" Style="background-color:#336bf2; color:white; font-family: customHelvetica;">
+          <Button onClick={() => login()} variant="contained" id="home_buttons" Style="background-color:#336bf2; color:white; font-family: customHelvetica;">
             Log In
           </Button>
 

@@ -13,10 +13,7 @@ import "./MediaControlCard.css";
 function MediaControlCard() {
   return (
     <div className="details">
-      <Card
-        className="Card"
-        Style="border-radius:30px;background-color: #336bf2; margin-top:80px;"
-      >
+      <Card className="Card" Style="border-radius:30px;background-color: #336bf2; margin-top:80px;">
         <CardContent className="mediaContent__container">
           <div className="mediaContent">
             <Typography component="h5" variant="h5">
