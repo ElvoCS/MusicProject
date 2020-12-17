@@ -1,0 +1,11 @@
+.input_login {
+  font-family: customHelvetica;
+  font-size: 11pt;
+  border-width: 0px;
+  width: 500px;
+  text-align: left;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}

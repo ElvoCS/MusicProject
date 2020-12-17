@@ -9,6 +9,17 @@ import MostPopularSongs from "../Components/MostPopularSongs";
 import Player from "../Components/Player";
 
 function Home() {
+
+  const loadLogin = () => {
+    window.location.href = './Login';
+  }
+
+  const loadCreateAccount = () => {
+    window.location.href = './CreateAccount';
+  }
+
+
+
   return (
     <div className="Home">
       <div className="home_spash_container">
@@ -26,18 +37,11 @@ function Home() {
           </h4>
 
           <div Style="width:100%;  font-family: customHelvetica;">
-            <Button
-              variant="contained"
-              id="home_buttons"
-              Style=" font-family: customHelvetica;"
-            >
+
+            <Button variant="contained" id="home_buttons" Style=" font-family: customHelvetica;" onClick={loadLogin}>
               Log In
             </Button>
-            <Button
-              variant="contained"
-              Style="background-color:#336bf2; color:white; font-family: customHelvetica;"
-              id="home_buttons"
-            >
+            <Button variant="contained" Style="background-color:#336bf2; color:white; font-family: customHelvetica;" id="home_buttons" onClick={loadCreateAccount}>
               Create an Account
             </Button>
           </div>

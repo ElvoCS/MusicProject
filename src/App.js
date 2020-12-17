@@ -5,19 +5,22 @@ import Song from "./pages/Song";
 import Footer from "./Components/Footer";
 import Profile from "./pages/Profile";
 import Home from "./pages/Home";
+import Login from "./pages/Login";
+import CreateAccount from "./pages/CreateAccount";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Player from "./Components/Player";
 
 function App() {
   return (
     <Router>
+      <Header />
       <div className="mainBodyContainer">
-        <Header />
-
         <div className="bodyFlex">
           <Switch>
-            <Route path="/Profile" component={Profile} />
-            <Route path="/Song" component={Song} />
+            <Route path="/profile" component={Profile} />
+            <Route path="/song" component={Song} />
+            <Route path="/Login" exact component={Login} />
+            <Route path="/CreateAccount" exact component={CreateAccount} />
             <Route path="/" exact component={Home} />
           </Switch>
         </div>
