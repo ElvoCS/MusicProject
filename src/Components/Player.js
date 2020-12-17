@@ -37,16 +37,10 @@ class Player extends Component {
   onStateChanged(state) {
     // only update if we got a real state
     if (state !== null) {
-      const {
-        current_track: currentTrack,
-        position,
-        duration,
-      } = state.track_window;
+      const { current_track: currentTrack, position, duration } = state.track_window;
       const trackName = currentTrack.name;
       const albumName = currentTrack.album.name;
-      const artistName = currentTrack.artists
-        .map((artist) => artist.name)
-        .join(", ");
+      const artistName = currentTrack.artists.map((artist) => artist.name).join(", ");
       const playing = !state.paused;
       this.setState({
         position,
@@ -85,9 +79,7 @@ class Player extends Component {
     });
 
     // Playback status updates
-    this.player.on("player_state_changed", (state) =>
-      this.onStateChanged(state)
-    );
+    this.player.on("player_state_changed", (state) => this.onStateChanged(state));
 
     // Ready
     this.player.on("ready", async (data) => {
@@ -152,15 +144,7 @@ class Player extends Component {
   }
 
   render() {
-    const {
-      token,
-      loggedIn,
-      trackName,
-      artistName,
-      albumName,
-      error,
-      playing,
-    } = this.state;
+    const { token, loggedIn, trackName, artistName, albumName, error, playing } = this.state;
     return (
       <div className="Player">
         <header className="Player_header">
@@ -172,35 +156,13 @@ class Player extends Component {
               <p>Track: {trackName}</p>
               <p>Album: {albumName}</p>
               <p>
-                <button
-                  Style={
-                    "color: transparent; background-color: transparent; border-color: transparent; cursor: default;"
-                  }
-                  onClick={() => this.onPrevClick()}
-                >
-                  <SkipPreviousIcon
-                    className="svg_icons"
-                    style={{ color: "white" }}
-                  />
+                <button Style={"color: transparent; background-color: transparent; border-color: transparent; cursor: default;"} onClick={() => this.onPrevClick()}>
+                  <SkipPreviousIcon className="svg_icons" style={{ color: "white" }} />
                 </button>
-                <button
-                  Style={
-                    "color: transparent; background-color: transparent; border-color: transparent; cursor: default;"
-                  }
-                  onClick={() => this.onPlayClick()}
-                >
-                  {playing ? (
-                    <PauseCircleOutlineIcon className="svg_icons" />
-                  ) : (
-                    <PlayCircleOutlineIcon className="svg_icons" />
-                  )}
+                <button Style={"color: transparent; background-color: transparent; border-color: transparent; cursor: default;"} onClick={() => this.onPlayClick()}>
+                  {playing ? <PauseCircleOutlineIcon className="svg_icons" /> : <PlayCircleOutlineIcon className="svg_icons" />}
                 </button>
-                <button
-                  Style={
-                    "color: transparent; background-color: transparent; border-color: transparent; cursor: default;"
-                  }
-                  onClick={() => this.onNextClick()}
-                >
+                <button Style={"color: transparent; background-color: transparent; border-color: transparent; cursor: default;"} onClick={() => this.onNextClick()}>
                   <SkipNextIcon className="svg_icons" />
                 </button>
               </p>
@@ -209,29 +171,16 @@ class Player extends Component {
             <div>
               <p className="Player_intro">
                 Enter your Spotify access token. Get it from{" "}
-                <a
-                  href="https://beta.developer.spotify.com/documentation/web-playback-sdk/quick-start/#authenticating-with-spotify"
-                  target="blank"
-                >
+                <a href="https://beta.developer.spotify.com/documentation/web-playback-sdk/quick-start/#authenticating-with-spotify" target="blank">
                   here
                 </a>
                 .
               </p>
               <p>
-                <input
-                  className="input"
-                  type="text"
-                  value={token}
-                  onChange={(e) => this.setState({ token: e.target.value })}
-                />
+                <input className="input" type="text" value={token} onChange={(e) => this.setState({ token: e.target.value })} />
               </p>
               <p>
-                <button
-                  Style={
-                    " background-color: transparent; border-color: transparent; cursor: default;"
-                  }
-                  onClick={() => this.handleLogin()}
-                >
+                <button Style={" background-color: transparent; border-color: transparent; cursor: default;"} onClick={() => this.handleLogin()}>
                   <VpnKeyIcon className="svg_icons" />
                 </button>
               </p>
