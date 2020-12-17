@@ -1,0 +1,68 @@
+.Player {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin-top: 6vh;
+}
+.Player_songArtist {
+  margin: 10px;
+}
+.Player_songArtist > p {
+  font-family: customHelvetica;
+}
+
+.Player_logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 20vmin;
+  pointer-events: none;
+  margin: 40px;
+}
+.Player_intro {
+  margin: 20px;
+  font-family: customHelvetica;
+}
+
+.Player_header {
+  background-color: #336bf2;
+  min-height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  border-radius: 30px;
+}
+
+a {
+  color: #61dafb;
+  text-decoration: underline;
+  cursor: pointer;
+  padding-top: 20px;
+}
+
+.user_details {
+  text-align: left;
+  padding-top: 20px;
+  font-weight: 300;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.svg_icons {
+  transform: scale(2);
+  margin: 5px;
+  color: white;
+  margin-top: 15px;
+}
+.input {
+  border-radius: 30px;
+  width: 60%;
+}
