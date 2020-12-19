@@ -1,17 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./Header.css";
 import MusicNoteIcon from "@material-ui/icons/MusicNote";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import { AppBar, Toolbar, IconButton, Icon } from "@material-ui/core";
 import { Link } from "react-router-dom";
-// import fire from "./config/fire";
+// import firebasefrom "./config/fire";
 
 import Button from "@material-ui/core/Button";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import Fade from "@material-ui/core/Fade";
+import { LocalDiningOutlined } from "@material-ui/icons";
+import firebase from "../config/fire";
+import { UserContext } from "../providers/UserProvider";
+import HeaderProfileWidget from "./HeaderProfileWidget";
 
 function Header() {
+  const user = useContext(UserContext);
+
   const [value, setValue] = useState("");
 
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -40,10 +46,6 @@ function Header() {
     setAnchorEl1(null);
   };
 
-  // const logOut = () => {
-  //   fire.auth().signOut();
-  // }
-
   const handleChange = (e) => {
     setValue(e.target.value);
   };
@@ -71,7 +73,7 @@ function Header() {
       <div className="headerContainer">
         <div className="headerLogo">
           <Link to="/" Style=" overflow:hidden; padding: 0px;">
-            <IconButton style={{ padding: 0 }} Style=" overflow:visible">
+            <IconButton Style=" padding:0px; overflow:visible;">
               <img alt="Logo" className="header__logo_header" />
             </IconButton>
           </Link>
@@ -80,18 +82,15 @@ function Header() {
         <div className="headerSearch">
           <div className="searchBar">
             <div Style="flex: 1;" className="searchIconContainer">
-              <i class="fas fa-search  fa-lg" Style="color:#336bf2 "></i>
+              <i className="fas fa-search  fa-lg" Style="color:#336bf2;"></i>
             </div>
             <div Style="flex: 20;" className="searchTextArea">
               <form Style="width:100%">
                 <input value={value} onChange={handleChange} onKeyPress={handleKeypress} className="inputField" id="searchText" placeholder="Start typing to search a song" Style="padding-left:5px" />
-                <button onClick={handleSubmit} type="submit" Style="display:none;">
+                <Button onClick={handleSubmit} type="submit" Style="display:none;">
                   Submit
-                </button>
+                </Button>
               </form>
-              {/* <button id="searchButton" onClick={() => search(document.getElementById("searchText").value)}>
-                Search
-              </button> */}
             </div>
           </div>
         </div>
@@ -125,7 +124,12 @@ function Header() {
         </Link>
 
         <Link to="/" className="header-links">
-          <MenuItem className="header-links" onClick={handleClose}>
+          <MenuItem
+            className="header-links"
+            onClick={() => {
+              firebase.auth().signOut();
+            }}
+          >
             Logout
           </MenuItem>
         </Link>
