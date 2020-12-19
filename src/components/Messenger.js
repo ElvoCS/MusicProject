@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Button, FormControl, InputLabel, Input } from "@material-ui/core";
 import Message from "./Message";
 import firestore from "../config/fire.js";
@@ -6,10 +6,19 @@ import firebase from "firebase";
 import FlipMove from "react-flip-move";
 import SendIcon from "@material-ui/icons/Send";
 import { IconButton } from "@material-ui/core";
+import { UserContext } from "../providers/UserProvider";
 function Messenger() {
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState([]);
   const [username, setUsername] = useState("");
+  const [displayName, setDisplayName] = useState("");
+  const user = useContext(UserContext);
+
+  useEffect(() => {
+    const { displayName } = user;
+    setDisplayName(displayName);
+    console.log(user);
+  }, []);
 
   useEffect(() => {
     //run once when app components loads
@@ -23,12 +32,6 @@ function Messenger() {
         );
       });
   }, []);
-
-  useEffect(() => {
-    //run code here
-    //const username= prompt("Please enter your username")
-    setUsername(prompt("Please enter your name"));
-  }, []); //condition if left blank this will run code once when app component loads
 
   const sendMessage = (event) => {
     event.preventDefault();
