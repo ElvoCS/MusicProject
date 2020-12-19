@@ -9,6 +9,7 @@ import Login from "./pages/Login";
 import CreateAccount from "./pages/CreateAccount";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Player from "./components/Player";
+import Messenger from "./components/Messenger";
 import UserProvider from "./providers/UserProvider";
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
               <Route path="/song" component={Song} />
               <Route path="/login" exact component={Login} />
               <Route path="/createAccount" exact component={CreateAccount} />
+              <Route path="/Messenger" exact component={Messenger} />
               <Route path="/" exact component={Home} />
             </Switch>
           </div>
