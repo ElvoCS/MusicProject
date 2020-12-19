@@ -8,8 +8,7 @@ const HeaderProfileWidget = ({ user }) => {
 
   useEffect(() => {
     setPhotoURL(photoURL);
-    console.log("test");
-  }, []);
+  });
 
   return (
     <div>

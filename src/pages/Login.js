@@ -24,13 +24,17 @@ function Login() {
         console.error("Error signing in with password and email", err);
       });
 
-    if (user) {
-      document.getElementById("email").value = "";
-      document.getElementById("password").value = "";
-      setEmail("");
-      setPassword("");
-      history.push("/");
-    }
+    firebase.auth().onAuthStateChanged(function (user) {
+      if (user) {
+        document.getElementById("email").value = "";
+        document.getElementById("password").value = "";
+        setEmail("");
+        setPassword("");
+        history.push("/");
+      } else {
+        // No user is signed in.
+      }
+    });
   };
 
   return (

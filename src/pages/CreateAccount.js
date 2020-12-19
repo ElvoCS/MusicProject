@@ -19,7 +19,7 @@ function CreateAccount() {
   const signUpWithEmailAndPassword = async (event, displayName, email_, password_) => {
     event.preventDefault();
     const seed = Math.floor(Math.random);
-    const photoURL = "https://picsum.photos/seed/picsum/200";
+    const photoURL = "https://picsum.photos/seed/" + seed + "/200";
     try {
       const { user } = await firebase.auth().createUserWithEmailAndPassword(email_, password_);
       console.log(displayName);
