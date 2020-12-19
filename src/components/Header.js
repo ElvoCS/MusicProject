@@ -97,6 +97,7 @@ function Header() {
 
         <div className="headerNavigation">
           <IconButton id="heart-button" className="far fa-heart fa-2x" Style="color: white;" size="medium" aria-controls="fade-menu-liked" aria-haspopup="true" onClick={handleClick1} />
+          {user ? <HeaderProfileWidget user={user} /> : <p> not logged in</p>}
           <IconButton id="profile-button" Style="color: white;" className="far fa-user fa-2x" size="medium" aria-controls="fade-menu-profile" aria-haspopup="true" onClick={handleClick} />
         </div>
       </div>
