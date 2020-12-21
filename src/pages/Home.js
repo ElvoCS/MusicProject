@@ -28,6 +28,7 @@ function Home() {
         </div>
 
         <div className="home_right">
+
           <h2 Style="margin-top:0; font-size: 25px;">Stream music and view song data now!</h2>
           <h4 Style="margin-top:0; font-size: 16px"> Log in or create an account.</h4>
 
@@ -36,12 +37,12 @@ function Home() {
               Log In
             </Button>
             <Button variant="contained" Style="background-color:#336bf2; color:white; font-family: customHelvetica;" size="medium" onClick={loadCreateAccount}>
+
               Create an Account
             </Button>
           </div>
         </div>
       </div>
-
       <div className="info_container">
         <div className="info_container_div">
           <div className="home_info_container_left">
@@ -53,16 +54,24 @@ function Home() {
         </div>
         <div className="info_container_div">
           <div Style="home_info_container_left">
-            <img src={data} alt="Data" className="" height="100" Style=" padding-left:10px;"></img>
+            <img
+              src={data}
+              alt="Data"
+              className=""
+              height="100"
+              Style=" padding-left:10px;"
+            ></img>
           </div>
           <div Style="width:200px">
             <h4 Style="margin-bottom:30px;">Get interesting data and facts about the artist.</h4>
           </div>
         </div>
       </div>
-
       <div className="home_splash_card_area">
-        <Card className="dataCard dataCard_home" Style="border-radius:30px;color: black">
+        <Card
+          className="dataCard dataCard_home"
+          Style="border-radius:30px;color: black"
+        >
           <div className="home_card_title">
             <h4 Style="margin-bottom:15px">Most Popular Songs</h4>
           </div>
