@@ -10,15 +10,15 @@ import { UserContext } from "../providers/UserProvider";
 function Messenger() {
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState([]);
-  const [username, setUsername] = useState("");
   const [displayName, setDisplayName] = useState("");
   const user = useContext(UserContext);
 
   useEffect(() => {
-    const { displayName } = user;
-    setDisplayName(displayName);
-    console.log(user);
-  }, []);
+    if (user) {
+      const { displayName } = user;
+      setDisplayName(displayName);
+    }
+  }, [user]);
 
   useEffect(() => {
     //run once when app components loads
@@ -38,7 +38,7 @@ function Messenger() {
 
     firebase.firestore().collection("messages").add({
       message: input,
-      username: username,
+      username: displayName,
       timestamp: firebase.firestore.FieldValue.serverTimestamp(),
     });
     setInput("");
@@ -47,7 +47,7 @@ function Messenger() {
   return (
     <div className="Messenger__container">
       <div className="Messenger">
-        <h2>Welcome {username}</h2>
+        <h2>Welcome {displayName}</h2>
         <form className="message__form">
           <FormControl>
             <InputLabel>Enter a message...</InputLabel>
@@ -70,7 +70,7 @@ function Messenger() {
 
         <FlipMove>
           {messages.map(({ id, message }) => (
-            <Message key={id} username={username} message={message} />
+            <Message key={id} username={displayName} message={message} />
           ))}
         </FlipMove>
       </div>
