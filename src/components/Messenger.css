@@ -1,11 +1,6 @@
-.Messenger__container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.Messenger {
+.messenger {
   text-align: center;
+  font-family: customHelvetica;
 }
 .message__form {
   text-align: center;

@@ -7,6 +7,7 @@ import FlipMove from "react-flip-move";
 import SendIcon from "@material-ui/icons/Send";
 import { IconButton } from "@material-ui/core";
 import { UserContext } from "../providers/UserProvider";
+import "./Messenger.css";
 function Messenger() {
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState([]);
@@ -45,35 +46,33 @@ function Messenger() {
   };
 
   return (
-    <div className="Messenger__container">
-      <div className="Messenger">
-        <h2>Welcome {displayName}</h2>
-        <form className="message__form">
-          <FormControl>
-            <InputLabel>Enter a message...</InputLabel>
-            <Input
-              value={input}
-              onChange={(event) => setInput(event.target.value)}
-            />
+    <div className="messenger">
+      <h2>Welcome {displayName}</h2>
+      <form className="message__form">
+        <FormControl>
+          <InputLabel>Enter a message...</InputLabel>
+          <Input
+            value={input}
+            onChange={(event) => setInput(event.target.value)}
+          />
 
-            <IconButton
-              disabled={!input}
-              variant="contained"
-              color="primary"
-              type="submit"
-              onClick={sendMessage}
-            >
-              <SendIcon />
-            </IconButton>
-          </FormControl>
-        </form>
+          <IconButton
+            disabled={!input}
+            variant="contained"
+            color="primary"
+            type="submit"
+            onClick={sendMessage}
+          >
+            <SendIcon />
+          </IconButton>
+        </FormControl>
+      </form>
 
-        <FlipMove>
-          {messages.map(({ id, message }) => (
-            <Message key={id} username={displayName} message={message} />
-          ))}
-        </FlipMove>
-      </div>
+      <FlipMove>
+        {messages.map(({ id, message }) => (
+          <Message key={id} username={displayName} message={message} />
+        ))}
+      </FlipMove>
     </div>
   );
 }

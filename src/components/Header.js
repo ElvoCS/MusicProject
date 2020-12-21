@@ -15,6 +15,7 @@ import firebase from "../config/fire";
 import { UserContext } from "../providers/UserProvider";
 import HeaderProfileWidget from "./HeaderProfileWidget";
 import { useHistory } from "react-router";
+import ChatIcon from "@material-ui/icons/Chat";
 
 function Header() {
   const user = useContext(UserContext);
@@ -92,8 +93,20 @@ function Header() {
             </div>
             <div Style="flex: 20;" className="searchTextArea">
               <form Style="width:100%">
-                <input value={value} onChange={handleChange} onKeyPress={handleKeypress} className="inputField" id="searchText" placeholder="Start typing to search a song" Style="padding-left:5px" />
-                <Button onClick={handleSubmit} type="submit" Style="display:none;">
+                <input
+                  value={value}
+                  onChange={handleChange}
+                  onKeyPress={handleKeypress}
+                  className="inputField"
+                  id="searchText"
+                  placeholder="Start typing to search a song"
+                  Style="padding-left:5px"
+                />
+                <Button
+                  onClick={handleSubmit}
+                  type="submit"
+                  Style="display:none;"
+                >
                   Submit
                 </Button>
               </form>
@@ -102,34 +115,87 @@ function Header() {
         </div>
 
         <div className="headerNavigation">
-          <IconButton id="heart-button" className="far fa-heart fa-8x" Style="color: white; font-size:30px" aria-controls="fade-menu-liked" aria-haspopup="true" onClick={handleClick1} />
+          <Link to="/Messenger">
+            <ChatIcon id="chat-button" className="far fa-heart fa-8x" />
+          </Link>
+
+          <IconButton
+            id="heart-button"
+            className="far fa-heart fa-8x"
+            Style="color: white; font-size:30px"
+            aria-controls="fade-menu-liked"
+            aria-haspopup="true"
+            onClick={handleClick1}
+          />
 
           {user ? (
-            <IconButton aria-controls="fade-menu-liked" aria-haspopup="true" onClick={handleClickLoggedIn}>
+            <IconButton
+              aria-controls="fade-menu-liked"
+              aria-haspopup="true"
+              onClick={handleClickLoggedIn}
+            >
               <HeaderProfileWidget user={user} />{" "}
             </IconButton>
           ) : (
-            <IconButton id="profile-button" Style="color: white; font-size:30px" className="far fa-user fa-5x" size="medium" onClick={() => history.push("/login")} />
+            <IconButton
+              id="profile-button"
+              Style="color: white; font-size:30px"
+              className="far fa-user fa-5x"
+              size="medium"
+              onClick={() => history.push("/login")}
+            />
           )}
         </div>
       </div>
 
-      <Menu id="fade-menu-liked" anchorEl={anchorEl1} keepMounted open={open1} onClose={handleClose1} getContentAnchorEl={null} anchorOrigin={{ vertical: "bottom", horizontal: "center" }} transformOrigin={{ vertical: "top", horizontal: "center" }} TransitionComponent={Fade}>
+      <Menu
+        id="fade-menu-liked"
+        anchorEl={anchorEl1}
+        keepMounted
+        open={open1}
+        onClose={handleClose1}
+        getContentAnchorEl={null}
+        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+        transformOrigin={{ vertical: "top", horizontal: "center" }}
+        TransitionComponent={Fade}
+      >
         <MenuItem onClick={handleClose1}>
-          <Icon className="far fa-play-circle" size="small" Style="color: black; padding-right:10px;" />
+          <Icon
+            className="far fa-play-circle"
+            size="small"
+            Style="color: black; padding-right:10px;"
+          />
           Lil Skies - Red Roses
         </MenuItem>
         <MenuItem onClick={handleClose1}>
-          <Icon className="far fa-play-circle" size="small" Style="color: black; padding-right:10px;" />
+          <Icon
+            className="far fa-play-circle"
+            size="small"
+            Style="color: black; padding-right:10px;"
+          />
           Drake - The Motion
         </MenuItem>
         <MenuItem onClick={handleClose1}>
-          <Icon className="far fa-play-circle" size="small" Style="color: black; padding-right:10px;" />
+          <Icon
+            className="far fa-play-circle"
+            size="small"
+            Style="color: black; padding-right:10px;"
+          />
           Bob Marley - Is This Love
         </MenuItem>
       </Menu>
 
-      <Menu id="fade-menu-profile" anchorEl={anchorEl} keepMounted open={open} onClose={handleClose} getContentAnchorEl={null} anchorOrigin={{ vertical: "bottom", horizontal: "center" }} transformOrigin={{ vertical: "top", horizontal: "center" }} TransitionComponent={Fade}>
+      <Menu
+        id="fade-menu-profile"
+        anchorEl={anchorEl}
+        keepMounted
+        open={open}
+        onClose={handleClose}
+        getContentAnchorEl={null}
+        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+        transformOrigin={{ vertical: "top", horizontal: "center" }}
+        TransitionComponent={Fade}
+      >
         <Link to="/Profile" className="header-links">
           <MenuItem className="header-links" onClick={handleClose}>
             Profile
