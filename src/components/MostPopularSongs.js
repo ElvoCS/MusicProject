@@ -20,30 +20,22 @@ const MostPopularSongs = () => {
     })
       .then((tokenResponse) => {
         setToken(tokenResponse.data.access_token);
+
+        axios(`https://api.spotify.com/v1/playlists/37i9dQZEVXbMDoHDwVN2tF/tracks`, {
+          method: "GET",
+          headers: { Authorization: "Bearer " + tokenResponse.data.access_token },
+        })
+          .then((tracksResponse) => {
+            setmusicData(tracksResponse.data.items);
+          })
+          .catch((error) => {
+            console.log("Spotify API call problem", error);
+          });
       })
       .catch((error) => {
-        console.log(error);
+        console.log("Spotify access token problem", error);
       });
   }, [spotify.ClientId, spotify.ClientSecret]);
-
-  useEffect(() => {
-    getMostPopular();
-  });
-
-  const getMostPopular = async () => {
-    await axios(`https://api.spotify.com/v1/playlists/37i9dQZEVXbMDoHDwVN2tF/tracks`, {
-      method: "GET",
-      headers: {
-        Authorization: "Bearer " + token,
-      },
-    })
-      .then((tracksResponse) => {
-        setmusicData(tracksResponse.data.items);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
 
   return (
     <div className="songs_container">

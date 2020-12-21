@@ -6,13 +6,9 @@ const HeaderProfileWidget = ({ user }) => {
 
   const { email, displayName, photoURL } = user;
 
-  useEffect(() => {
-    setPhotoURL(photoURL);
-  });
-
   return (
     <div>
-      <img className="rounded_profile" src={photoURL_} alt="profile" />
+      <img className="rounded_profile" src={photoURL} />
     </div>
   );
 };

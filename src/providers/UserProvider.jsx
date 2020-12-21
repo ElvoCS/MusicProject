@@ -11,7 +11,7 @@ function UserProvider(props) {
       const user = await generateUserDocument(userAuth);
       setUser(user);
     });
-  });
+  }, []);
 
   return <UserContext.Provider value={user}>{props.children}</UserContext.Provider>;
 }

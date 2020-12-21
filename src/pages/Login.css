@@ -1,11 +1,23 @@
 .input_login {
   font-family: customHelvetica;
-  font-size: 11pt;
+  font-size: 16px;
   border-width: 0px;
-  width: 500px;
+  width: 300px;
   text-align: left;
   padding: 10px;
   display: flex;
   align-items: center;
   justify-content: left;
+}
+
+.error {
+  font-family: customHelvetica;
+  color: red;
+}
+
+.create_account_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: customHelvetica;
 }

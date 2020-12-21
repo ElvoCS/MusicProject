@@ -14,23 +14,29 @@ import { LocalDiningOutlined } from "@material-ui/icons";
 import firebase from "../config/fire";
 import { UserContext } from "../providers/UserProvider";
 import HeaderProfileWidget from "./HeaderProfileWidget";
+import { useHistory } from "react-router";
 
 function Header() {
   const user = useContext(UserContext);
-
+  let history = useHistory();
   const [value, setValue] = useState("");
-
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
 
-  const handleClick = (event) => {
+  const handleClickLoggedOut = (event) => {
     document.getElementById("profile-button").style.color = "lightgreen";
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClickLoggedIn = (event) => {
     setAnchorEl(event.currentTarget);
   };
 
   const handleClose = () => {
     setAnchorEl(null);
-    document.getElementById("profile-button").style.color = "white";
+    if (document.body.contains(document.getElementById("profile-button"))) {
+      document.getElementById("profile-button").style.color = "white";
+    }
   };
 
   const [anchorEl1, setAnchorEl1] = React.useState(null);
@@ -96,9 +102,15 @@ function Header() {
         </div>
 
         <div className="headerNavigation">
-          <IconButton id="heart-button" className="far fa-heart fa-2x" Style="color: white;" size="medium" aria-controls="fade-menu-liked" aria-haspopup="true" onClick={handleClick1} />
-          {user ? <HeaderProfileWidget user={user} /> : <p> not logged in</p>}
-          <IconButton id="profile-button" Style="color: white;" className="far fa-user fa-2x" size="medium" aria-controls="fade-menu-profile" aria-haspopup="true" onClick={handleClick} />
+          <IconButton id="heart-button" className="far fa-heart fa-8x" Style="color: white; font-size:30px" aria-controls="fade-menu-liked" aria-haspopup="true" onClick={handleClick1} />
+
+          {user ? (
+            <IconButton aria-controls="fade-menu-liked" aria-haspopup="true" onClick={handleClickLoggedIn}>
+              <HeaderProfileWidget user={user} />{" "}
+            </IconButton>
+          ) : (
+            <IconButton id="profile-button" Style="color: white; font-size:30px" className="far fa-user fa-5x" size="medium" onClick={() => history.push("/login")} />
+          )}
         </div>
       </div>
 

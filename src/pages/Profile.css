@@ -6,14 +6,18 @@
   height: 100%;
   flex-wrap: wrap;
 }
-.ProfilePic{
-             font-family: customHelvetica;
-             display: flex;
-             align-items: center;
-             justify-content: center;
-             height: 100%;
-             flex-wrap: wrap;
-           }
+
+.profile_pic_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile_pic {
+  display: block;
+  border-radius: 50%;
+  border: inset 15px #336bf2;
+}
 .Username {
   font-family: customHelvetica;
   display: flex;
@@ -40,4 +44,23 @@
 .dataCard_home {
   max-width: 80%;
   min-height: 300px;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile_card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 50px;
+  padding-bottom: 30px;
+  max-width: 400px;
+  min-height: 400px;
+}
+.user_info {
 }

@@ -20,7 +20,8 @@ function Login() {
       .auth()
       .signInWithEmailAndPassword(email_, password_)
       .catch((err) => {
-        setError("Error signing in with password and email!");
+        document.getElementById("error").innerHTML = err.message;
+        setError(err);
         console.error("Error signing in with password and email", err);
       });
 
@@ -38,38 +39,29 @@ function Login() {
   };
 
   return (
-    <div className="Home" style={{ textAlign: "center" }}>
+    <div className="create_account_container">
       <div id="loginPage">
         <br />
-        <h1 Style="font-family:customHelvetica;">Login</h1>
+        <h1 Style="font-family:customHelvetica;text-align:center;">Login</h1>
         <br />
 
         <div style={{ display: "flex", textAlign: "center", justifyContent: "center" }}>
-          <input className="input_login" placeholder="Enter Email" type="text" id="email" onChange={(e) => setEmail(e.target.value)}></input>
+          <input className="input_login" placeholder="Email" type="text" id="email" onChange={(e) => setEmail(e.target.value)}></input>
         </div>
         <br></br>
         <div style={{ display: "flex", textAlign: "center", justifyContent: "center" }}>
-          <input Style="margin-bottom:30px;" className="input_login" id="password" placeholder="Enter Password" type="password" onChange={(e) => setPassword(e.target.value)}></input>
+          <input Style="margin-bottom:30px;" className="input_login" id="password" placeholder="Password" type="password" onChange={(e) => setPassword(e.target.value)}></input>
         </div>
+
+        <br></br>
+        <div id="error" className="error"></div>
+        <br></br>
+
         <div style={{ display: "flex", textAlign: "center", justifyContent: "center", alignItems: "center", marginBottom: 50 }}>
-          <Button onClick={(e) => logInWithEmailAndPassword(e, email, password)} variant="contained" id="home_buttons" Style="background-color:#336bf2; color:white; font-family: customHelvetica;">
+          <Button onClick={(e) => logInWithEmailAndPassword(e, email, password)} variant="contained" size="small" Style="background-color:#336bf2; color:white; margin-right: 30px;font-family: customHelvetica;">
             Log In
           </Button>
-
-          <Button
-            variant="contained"
-            id="home_buttons"
-            Style=" 
-                width: 220px;
-                height:45px;
-                font-family: customHelvetica;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                flex-direction: column;
-                 text-align: center;"
-            onClick={() => (window.location.href = "./CreateAccount")}
-          >
+          <Button variant="contained" size="small" Style="font-family: customHelvetica; text-align: center; " onClick={() => (window.location.href = "./CreateAccount")}>
             Create New Account
           </Button>
         </div>
