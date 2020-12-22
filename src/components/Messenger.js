@@ -47,6 +47,7 @@ function Messenger() {
 
   return (
     <div className="messenger">
+      <h1>Daily Discussion Board</h1>
       <h2>Welcome {displayName}</h2>
       <form className="message__form">
         <FormControl>

@@ -115,9 +115,13 @@ function Header() {
         </div>
 
         <div className="headerNavigation">
-          <Link to="/Messenger">
-            <ChatIcon id="chat-button" className="far fa-heart fa-8x" />
-          </Link>
+          <IconButton
+            className="chat-button"
+            Style="color: white; font-size:30px"
+            onClick={() => history.push("/Messenger")}
+          >
+            <ChatIcon />
+          </IconButton>
 
           <IconButton
             id="heart-button"
