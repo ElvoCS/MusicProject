@@ -1,0 +1,13 @@
+.messenger {
+  text-align: center;
+  font-family: customHelvetica;
+}
+.message__form {
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  z-index: 1;
+  background-color: #e9e9eb;
+  width: 100%;
+  margin: 20px;
+}
