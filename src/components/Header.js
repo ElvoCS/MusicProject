@@ -57,9 +57,10 @@ function Header() {
   };
 
   const handleSubmit = (e) => {
-    search(value);
     e.preventDefault();
-    alert("you have searched for : " + value);
+    search(value);
+    history.push("/song/" + value);
+    window.location.reload(false);
     // or you can send data to backend
   };
 

@@ -23,7 +23,7 @@ function App() {
           <div className="bodyFlex">
             <Switch>
               <Route path="/profile" component={Profile} />
-              <Route path="/song" component={Song} />
+              <Route path="/song/:id" component={Song} />
               <Route path="/login" exact component={Login} />
               <Route path="/createAccount" exact component={CreateAccount} />
               <Route path="/" exact component={Home} />

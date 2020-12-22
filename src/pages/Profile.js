@@ -42,7 +42,7 @@ function Profile() {
 
   return (
     <div className="profile">
-      <Card className="dataCard profile_card" Style="border-radius:30px;color: black">
+      <Card className=" profile_card" Style="border-radius:30px;color: black">
         <div className="profile_pic_container">
           <img className="profile_pic" src={photoURL_} alt="profile" />
         </div>

@@ -53,14 +53,16 @@
 }
 
 .profile_card {
+  font-family: customHelvetica;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   padding-top: 50px;
   padding-bottom: 30px;
-  max-width: 400px;
+  min-width: 400px;
   min-height: 400px;
+  margin: 30px;
 }
 .user_info {
 }
