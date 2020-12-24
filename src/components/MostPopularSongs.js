@@ -21,6 +21,34 @@ const MostPopularSongs = () => {
       .then((tokenResponse) => {
         setToken(tokenResponse.data.access_token);
 
+        axios(`https://api.spotify.com/v1/artists/66CXWjxzNUsdJxJ2JdwvnR/`, {
+          method: "GET",
+          headers: { Authorization: "Bearer " + tokenResponse.data.access_token },
+        })
+          .then((tracksResponse) => {
+            console.log(tracksResponse);
+          })
+          .catch((error) => {
+            console.log("Spotify API call problem", error);
+          });
+      })
+      .catch((error) => {
+        console.log("Spotify access token problem", error);
+      });
+  }, [spotify.ClientId, spotify.ClientSecret]);
+
+  useEffect(() => {
+    axios("https://accounts.spotify.com/api/token", {
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        Authorization: "Basic " + btoa(spotify.ClientId + ":" + spotify.ClientSecret),
+      },
+      data: "grant_type=client_credentials",
+      method: "POST",
+    })
+      .then((tokenResponse) => {
+        setToken(tokenResponse.data.access_token);
+
         axios(`https://api.spotify.com/v1/playlists/37i9dQZEVXbMDoHDwVN2tF/tracks`, {
           method: "GET",
           headers: { Authorization: "Bearer " + tokenResponse.data.access_token },

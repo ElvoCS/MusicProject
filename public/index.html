@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script src="https://apis.google.com/js/api.js"></script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <script src="https://kit.fontawesome.com/aeb26ed772.js" crossorigin="anonymous"></script>
+
     <meta name="description" content="Notify is a music streaming & sharing platform with a focus on data analytics " />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/icon.png" />
     <link rel="manifest" href="./manifest.json" />
@@ -27,7 +29,7 @@
     <script>
       window.onSpotifyWebPlaybackSDKReady = () => {
         window.Spotify = Spotify;
-      }
+      };
     </script>
   </body>
 </html>

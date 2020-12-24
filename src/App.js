@@ -32,9 +32,7 @@ function App() {
             </Switch>
           </div>
 
-          <div className="footerFlex">
-            <Footer />
-          </div>
+          <Footer />
         </div>
       </Router>
     </UserProvider>
