@@ -43,7 +43,7 @@ function Danceability() {
           .then((tracksResponse) => {
             console.log(tracksResponse);
             if (tracksResponse != undefined) {
-              setDanceability(tracksResponse.data.danceability);
+              setDanceability(tracksResponse.data.valence);
               searchSuccess = true;
             } else {
               searchSuccess = false;
@@ -60,24 +60,24 @@ function Danceability() {
 
   const data = [
     { x: 0, y: 0 },
-    { x: 1, y: 17.64 },
-    { x: 2, y: 35.2941176471 },
-    { x: 3, y: 73.5294117647 },
-    { x: 4, y: 161.764705882 },
-    { x: 5, y: 188.235294118 },
-    { x: 6, y: 255.882352941 },
-    { x: 7, y: 367.647058824 },
-    { x: 8, y: 458.823529412 },
-    { x: 9, y: 605.882352942 },
-    { x: 10, y: 764.705882353 },
-    { x: 11, y: 967.647058824 },
-    { x: 12, y: 1050 },
-    { x: 13, y: 1035.29411765 },
-    { x: 14, y: 847.05882353 },
-    { x: 15, y: 647.05882353 },
-    { x: 16, y: 344.117647059 },
-    { x: 17, y: 150 },
-    { x: 18, y: 73.5294117647 },
+    { x: 1, y: 342.09 },
+    { x: 2, y: 389.15 },
+    { x: 3, y: 457.93 },
+    { x: 4, y: 579.2 },
+    { x: 5, y: 532.14 },
+    { x: 6, y: 615.4 },
+    { x: 7, y: 629.88 },
+    { x: 8, y: 660.65 },
+    { x: 9, y: 577.39 },
+    { x: 10, y: 597.3 },
+    { x: 11, y: 615.4 },
+    { x: 12, y: 660.65 },
+    { x: 13, y: 550.24 },
+    { x: 14, y: 571.96 },
+    { x: 15, y: 515.85 },
+    { x: 16, y: 494.13 },
+    { x: 17, y: 367.43 },
+    { x: 18, y: 331.23 },
     { x: 19, y: 0 },
   ];
 
@@ -89,21 +89,21 @@ function Danceability() {
           style={{ borderRadius: 30, color: "black" }}
         >
           <div className="song_card_title">
-            <h4 style={{ margin: 5, fontSize: 20 }}>Danceability</h4>
+            <h4 style={{ margin: 5, fontSize: 20 }}>Valence</h4>
           </div>
           <div className="song_card_title">
             <h4 style={{ margin: 5, fontSize: 15 }}>
-              {songName} : {parseFloat(danceability) * 100}% danceable
+              {songName} : {parseFloat(danceability) * 100}% valence
             </h4>
           </div>
           <div className="graph_description">
             <div className="graph_description_text">
               <h4>
-                Danceability describes how suitable a track is for dancing based
-                on a combination of musical elements including tempo, rhythm
-                stability, beat strength, and overall regularity. A value of 0
-                is least danceable and 100 is most danceable. The distribution
-                of values for this feature look like this.
+                A measure from 0.0 to 1.0 describing the musical positiveness
+                conveyed by a track. Tracks with high valence sound more
+                positive (e.g. happy, cheerful, euphoric), while tracks with low
+                valence sound more negative (e.g. sad, depressed, angry). The
+                distribution of values for this feature look like this:
               </h4>
             </div>
           </div>
@@ -116,7 +116,7 @@ function Danceability() {
               width={600}
               color="#336bf2"
               xDomain={[0, 20]}
-              yDomain={[0, 1000]}
+              yDomain={[0, 700]}
               margin={{ left: 60 }}
             >
               <XAxis
@@ -129,9 +129,11 @@ function Danceability() {
             </XYPlot>
           </div>
           <div className="x_axis_label">
-            <h2>Danceability (%) </h2>
+            <h2>Valence (%) </h2>
           </div>
-          <div className="graph_description"></div>
+          <div className="graph_description">
+            <div className="graph_description_text"></div>
+          </div>
         </Card>
       </div>
     </div>
