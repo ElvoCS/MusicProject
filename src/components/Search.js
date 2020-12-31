@@ -7,6 +7,7 @@ import { useDispatch } from "react-redux";
 import { setSongName, setArtistName, setSpotifyID } from "../redux/actions";
 import Biography from "./Biography";
 import Danceability from "./Danceability";
+import Valence from "./Valence";
 
 function Search() {
   const spotify = Credentials();
@@ -28,21 +29,33 @@ function Search() {
     await axios("https://accounts.spotify.com/api/token", {
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
-        Authorization: "Basic " + btoa(spotify.ClientId + ":" + spotify.ClientSecret),
+        Authorization:
+          "Basic " + btoa(spotify.ClientId + ":" + spotify.ClientSecret),
       },
       data: "grant_type=client_credentials",
       method: "POST",
     })
       .then((tokenResponse) => {
-        axios(`https://api.spotify.com/v1/search?q=` + spotifySearchTerm + `&type=track`, {
-          method: "GET",
-          headers: { Authorization: "Bearer " + tokenResponse.data.access_token },
-        })
+        axios(
+          `https://api.spotify.com/v1/search?q=` +
+            spotifySearchTerm +
+            `&type=track`,
+          {
+            method: "GET",
+            headers: {
+              Authorization: "Bearer " + tokenResponse.data.access_token,
+            },
+          }
+        )
           .then((tracksResponse) => {
             if (tracksResponse.data.tracks.items.length > 0) {
               console.log(tracksResponse);
               dispatch(setSongName(tracksResponse.data.tracks.items[0].name));
-              dispatch(setArtistName(tracksResponse.data.tracks.items[0].artists[0].name));
+              dispatch(
+                setArtistName(
+                  tracksResponse.data.tracks.items[0].artists[0].name
+                )
+              );
               console.log(tracksResponse.data.tracks.items[0].id);
               dispatch(setSpotifyID(tracksResponse.data.tracks.items[0].id));
               searchSuccess = true;
@@ -67,6 +80,7 @@ function Search() {
           <SearchYoutube />
           <Biography />
           <Danceability />
+          <Valence />
         </div>
       )}
     </div>
