@@ -27,6 +27,7 @@ function SearchYoutube(data) {
         dispatch(setVideoID(videos[0].id.videoId));
       }
     });
+    */
   };
 
   return (
@@ -44,22 +45,8 @@ function SearchYoutube(data) {
               backgroundColor: "black",
             }}
           >
-            <div
-              className="youtube-player"
-              style={{ width: "100%", height: "100%" }}
-            >
-              <ReactPlayer
-                allow="autoplay"
-                className="youtube-player"
-                origin="http://localhost:3000"
-                controls={true}
-                volume={0.2}
-                width="100%"
-                height="100%"
-                url={
-                  "http://www.youtube.com/watch?v=" + videoID + "?autoplay=1"
-                }
-              />
+            <div className="youtube-player" style={{ width: "100%", height: "100%" }}>
+              <ReactPlayer allow="autoplay" className="youtube-player" origin="http://localhost:3000" controls={true} volume={0.2} width="100%" height="100%" url={"http://www.youtube.com/watch?v=" + videoID + "?autoplay=1"} />
             </div>
           </Card>
         </div>
