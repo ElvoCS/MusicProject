@@ -1,5 +1,5 @@
 import React from "react";
-import "./Detail.css";
+import "./styles/Detail.css";
 
 const Detail = ({ track }) => {
   return (

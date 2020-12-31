@@ -1,19 +1,17 @@
 import React from "react";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import SkipPreviousIcon from "@material-ui/icons/SkipPrevious";
 import PlayArrowIcon from "@material-ui/icons/PlayArrow";
 import SkipNextIcon from "@material-ui/icons/SkipNext";
-import "./MediaControlCard.css";
+import "./styles/MediaControlCard.css";
 
 function MediaControlCard() {
   return (
     <div className="details">
-      <Card className="Card" Style="border-radius:30px;background-color: #336bf2; margin-top:80px;">
+      <Card className="Card" style={{ borderRadius: 30, backgroundColor: "336bf2", marginTop: 80 }}>
         <CardContent className="mediaContent__container">
           <div className="mediaContent">
             <Typography component="h5" variant="h5">

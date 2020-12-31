@@ -1,0 +1,7 @@
+Store  -> stores data
+
+Action Increment -> creates action
+
+Reducer -> checks action
+
+dispatch -> send action to reducer

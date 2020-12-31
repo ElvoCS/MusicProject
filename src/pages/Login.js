@@ -1,4 +1,4 @@
-import "./Login.css";
+import "./styles/Login.css";
 import React, { useState, useContext } from "react";
 import firebase from "../config/fire";
 import { AppBar, Toolbar, IconButton, Icon } from "@material-ui/core";
@@ -42,7 +42,7 @@ function Login() {
     <div className="create_account_container">
       <div id="loginPage">
         <br />
-        <h1 Style="font-family:customHelvetica;text-align:center;">Login</h1>
+        <h1 style={{ fontFamily: "customHelvetica", textAlign: "center" }}>Login</h1>
         <br />
 
         <div style={{ display: "flex", textAlign: "center", justifyContent: "center" }}>
@@ -50,7 +50,7 @@ function Login() {
         </div>
         <br></br>
         <div style={{ display: "flex", textAlign: "center", justifyContent: "center" }}>
-          <input Style="margin-bottom:30px;" className="input_login" id="password" placeholder="Password" type="password" onChange={(e) => setPassword(e.target.value)}></input>
+          <input style={{ marginBottom: 30 }} className="input_login" id="password" placeholder="Password" type="password" onChange={(e) => setPassword(e.target.value)}></input>
         </div>
 
         <br></br>
@@ -58,10 +58,10 @@ function Login() {
         <br></br>
 
         <div style={{ display: "flex", textAlign: "center", justifyContent: "center", alignItems: "center", marginBottom: 50 }}>
-          <Button onClick={(e) => logInWithEmailAndPassword(e, email, password)} variant="contained" size="small" Style="background-color:#336bf2; color:white; margin-right: 30px;font-family: customHelvetica;">
+          <Button onClick={(e) => logInWithEmailAndPassword(e, email, password)} variant="contained" size="small" style={{ backgroundColor: "#336bf2", color: "white", marginRight: 30, fontFamily: "customHelvetica" }}>
             Log In
           </Button>
-          <Button variant="contained" size="small" Style="font-family: customHelvetica; text-align: center; " onClick={() => (window.location.href = "./CreateAccount")}>
+          <Button variant="contained" size="small" style={{ fontFamily: "customHelvetica", textAlign: "center" }} onClick={() => (window.location.href = "./CreateAccount")}>
             Create New Account
           </Button>
         </div>

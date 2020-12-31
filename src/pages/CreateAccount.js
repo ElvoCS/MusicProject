@@ -1,12 +1,7 @@
-import "./Login.css";
+import "./styles/Login.css";
 import React, { useState } from "react";
 import firebase, { generateUserDocument } from "../config/fire";
-import { AppBar, Toolbar, IconButton, Icon } from "@material-ui/core";
-import { Link } from "react-router-dom";
 import Button from "@material-ui/core/Button";
-import Menu from "@material-ui/core/Menu";
-import MenuItem from "@material-ui/core/MenuItem";
-import Fade from "@material-ui/core/Fade";
 import { useHistory } from "react-router";
 
 function CreateAccount() {
@@ -48,7 +43,7 @@ function CreateAccount() {
     <div className="create_account_container">
       <div id="createAccount">
         <br></br>
-        <h2 Style="font-family:customHelvetica; text-align:center;">Create An Account</h2>
+        <h2 style={{ fontFamily: "customHelvetica", textAlign: "center" }}>Create An Account</h2>
         <br></br>
         <div style={{ display: "flex", textAlign: "center", justifyContent: "center" }}>
           <input className="input_login" placeholder="Username" id="displayName" type="text" onChange={(e) => setDisplayName(e.target.value)}></input>
@@ -68,10 +63,10 @@ function CreateAccount() {
         <br></br>
 
         <div style={{ display: "flex", textAlign: "center", justifyContent: "center", alignItems: "center", marginBottom: 50 }}>
-          <Button onClick={(e) => signUpWithEmailAndPassword(e, displayName, email, password)} size="small" variant="contained" Style="background-color:#336bf2; color:white; margin-right: 30px;font-family: customHelvetica;">
+          <Button onClick={(e) => signUpWithEmailAndPassword(e, displayName, email, password)} size="small" variant="contained" style={{ backgroundColor: "#336bf2", color: "white", marginRight: 30, fontFamily: "customHelvetica" }}>
             Create Account
           </Button>
-          <Button variant="contained" size="small" Style="font-family: customHelvetica; text-align: center; " onClick={() => (window.location.href = "./Login")}>
+          <Button variant="contained" size="small" style={{ fontFamily: "customHelvetica", textAlign: "center" }} onClick={() => (window.location.href = "./Login")}>
             Log In
           </Button>
         </div>

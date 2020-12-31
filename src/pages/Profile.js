@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from "react";
-import "./Profile.css";
+import "./styles/Profile.css";
 import LocationOnIcon from "@material-ui/icons/LocationOn";
 import PermIdentityIcon from "@material-ui/icons/PermIdentity";
 import { Button, Card, List, ListItem, ListItemText } from "@material-ui/core";
@@ -42,7 +42,7 @@ function Profile() {
 
   return (
     <div className="profile">
-      <Card className=" profile_card" Style="border-radius:30px;color: black">
+      <Card className=" profile_card" style={{ borderRadius: 30, color: "black" }}>
         <div className="profile_pic_container">
           <img className="profile_pic" src={photoURL_} alt="profile" />
         </div>
@@ -52,17 +52,17 @@ function Profile() {
             <br />
 
             <ListItem>
-              Username: &nbsp; <div Style="color:#336bf2"> {displayName_}</div>
+              Username: &nbsp; <div style={{ color: "#336bf2" }}> {displayName_}</div>
             </ListItem>
             <ListItem>
-              Email: &nbsp;<div Style="color:#336bf2">{email_}</div>
+              Email: &nbsp;<div style={{ color: "#336bf2" }}>{email_}</div>
             </ListItem>
             <br />
-            <Button variant="contained" Style="font-family:customHelvetica; background-color:#336bf2; color: white;margin-right:20px" onClick={() => profile_logout()}>
+            <Button variant="contained" style={{ fontFamily: "customHelvetica", backgroundColor: "#336bf2", color: "white", marginRight: 20 }} onClick={() => profile_logout()}>
               Log out
             </Button>
 
-            <Button variant="contained" color="secondary" Style="font-family:customHelvetica;" onClick={() => profile_deleteAccount()}>
+            <Button variant="contained" color="secondary" style={{ fontFamily: "customHelvetica" }} onClick={() => profile_deleteAccount()}>
               Delete Account
             </Button>
           </List>

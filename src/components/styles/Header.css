@@ -72,13 +72,13 @@ input:focus {
 }
 
 .header__logo_header {
-  content: url("../res/logo_icon.png");
+  content: url("../../res/logo_icon.png");
   height: 40px;
   padding: 0px;
 }
 @media (max-width: 600px) {
   .header__logo_header {
-    content: url("../res/icon.png");
+    content: url("../../res/icon.png");
     height: 40px;
     padding: 0px;
   }

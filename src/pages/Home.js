@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import "./Home.css";
+import "./styles/Home.css";
 import { Button, IconButton, Card } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import bigLogo from "../res/logo_big.png"; // Tell webpack this JS file uses this image
@@ -28,16 +28,14 @@ function Home() {
         </div>
 
         <div className="home_right">
+          <h2 style={{ marginTop: 0, fontSize: 25 }}>Stream music and view song data now!</h2>
+          <h4 style={{ marginTop: 0, fontSize: 16 }}> Log in or create an account.</h4>
 
-          <h2 Style="margin-top:0; font-size: 25px;">Stream music and view song data now!</h2>
-          <h4 Style="margin-top:0; font-size: 16px"> Log in or create an account.</h4>
-
-          <div Style="width:100%;  font-family: customHelvetica;">
-            <Button variant="contained" Style=" font-family: customHelvetica; margin-right: 20px;" size="medium" onClick={loadLogin}>
+          <div style={{ width: "100%", fontFamily: "customHelvetica" }}>
+            <Button variant="contained" style={{ fontFamily: "customHelvetica", marginRight: 20 }} size="medium" onClick={loadLogin}>
               Log In
             </Button>
-            <Button variant="contained" Style="background-color:#336bf2; color:white; font-family: customHelvetica;" size="medium" onClick={loadCreateAccount}>
-
+            <Button variant="contained" style={{ backgroundColor: "#336bf2", color: "white", fontFamily: "customHelvetica" }} size="medium" onClick={loadCreateAccount}>
               Create an Account
             </Button>
           </div>
@@ -46,34 +44,25 @@ function Home() {
       <div className="info_container">
         <div className="info_container_div">
           <div className="home_info_container_left">
-            <img src={music} alt="Music" className="" Style="margin-top:10px" height="90"></img>
-            <div Style="width:200px">
-              <h4 Style="margin-bottom:30px; margin-top:25px">Listen to your favourite music.</h4>
+            <img src={music} alt="Music" className="" style={{ marginTop: 10 }} height="90"></img>
+            <div style={{ width: 200 }}>
+              <h4 style={{ marginBottom: 30, marginTop: 25 }}>Listen to your favourite music.</h4>
             </div>
           </div>
         </div>
         <div className="info_container_div">
-          <div Style="home_info_container_left">
-            <img
-              src={data}
-              alt="Data"
-              className=""
-              height="100"
-              Style=" padding-left:10px;"
-            ></img>
+          <div className="home_info_container_left">
+            <img src={data} alt="Data" className="" height="100" style={{ paddingLeft: 10 }}></img>
           </div>
-          <div Style="width:200px">
-            <h4 Style="margin-bottom:30px;">Get interesting data and facts about the artist.</h4>
+          <div style={{ width: 200 }}>
+            <h4 style={{ marginBottom: 30 }}>Get interesting data and facts about the artist.</h4>
           </div>
         </div>
       </div>
       <div className="home_splash_card_area">
-        <Card
-          className="dataCard dataCard_home"
-          Style="border-radius:30px;color: black"
-        >
+        <Card className="dataCard dataCard_home" style={{ borderRadius: 30, color: "black" }}>
           <div className="home_card_title">
-            <h4 Style="margin-bottom:15px">Most Popular Songs</h4>
+            <h4 style={{ marginBottom: 15 }}>Most Popular Songs</h4>
           </div>
           <MostPopularSongs />
         </Card>

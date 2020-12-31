@@ -1,16 +1,11 @@
 import React, { useState, useContext } from "react";
-import "./Header.css";
-import MusicNoteIcon from "@material-ui/icons/MusicNote";
-import AccountCircleIcon from "@material-ui/icons/AccountCircle";
+import "./styles/Header.css";
 import { AppBar, Toolbar, IconButton, Icon } from "@material-ui/core";
 import { Link } from "react-router-dom";
-// import firebasefrom "./config/fire";
-
 import Button from "@material-ui/core/Button";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import Fade from "@material-ui/core/Fade";
-import { LocalDiningOutlined } from "@material-ui/icons";
 import firebase from "../config/fire";
 import { UserContext } from "../providers/UserProvider";
 import HeaderProfileWidget from "./HeaderProfileWidget";
@@ -59,10 +54,8 @@ function Header() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    search(value);
     history.push("/song/" + value);
     window.location.reload(false);
-    // or you can send data to backend
   };
 
   const handleKeypress = (e) => {
@@ -71,17 +64,12 @@ function Header() {
     }
   };
 
-  function search(text) {
-    console.log(text);
-    //search apis for a song
-    //retrieve song page with that data as an input
-  }
   return (
     <AppBar position="static">
       <div className="headerContainer">
         <div className="headerLogo">
-          <Link to="/" Style=" overflow:hidden; padding: 0px;">
-            <IconButton Style=" padding:0px; overflow:visible;">
+          <Link to="/" style={{ overflow: "hidden", padding: 0 }}>
+            <IconButton style={{ padding: 0, overflow: "visible" }}>
               <img alt="Logo" className="header__logo_header" />
             </IconButton>
           </Link>
@@ -89,13 +77,13 @@ function Header() {
 
         <div className="headerSearch">
           <div className="searchBar">
-            <div Style="flex: 1;" className="searchIconContainer">
-              <i className="fas fa-search  fa-lg" Style="color:#336bf2;"></i>
+            <div style={{ flex: 1 }} className="searchIconContainer">
+              <i className="fas fa-search  fa-lg" style={{ color: "#336bf2" }}></i>
             </div>
-            <div Style="flex: 20;" className="searchTextArea">
-              <form Style="width:100%">
-                <input value={value} onChange={handleChange} onKeyPress={handleKeypress} className="inputField" id="searchText" placeholder="Start typing to search a song" Style="padding-left:5px" />
-                <Button onClick={handleSubmit} type="submit" Style="display:none;">
+            <div style={{ flex: 20 }} className="searchTextArea">
+              <form style={{ width: "100%" }}>
+                <input value={value} onChange={handleChange} onKeyPress={handleKeypress} className="inputField" id="searchText" placeholder="Start typing to search a song" style={{ paddingLeft: 5 }} />
+                <Button onClick={handleSubmit} type="submit" style={{ display: "none" }}>
                   Submit
                 </Button>
               </form>
@@ -104,33 +92,33 @@ function Header() {
         </div>
 
         <div className="headerNavigation">
-          <IconButton className="chat-button" Style="color: white; font-size:large;" onClick={() => history.push("/Messenger")}>
+          <IconButton className="chat-button" style={{ color: "white", fontSize: "large" }} onClick={() => history.push("/Messenger")}>
             <ChatIcon />
           </IconButton>
 
-          <IconButton id="heart-button" className="far fa-heart fa-8x" Style="color: white; font-size:30px" aria-controls="fade-menu-liked" aria-haspopup="true" onClick={handleClick1} />
+          <IconButton id="heart-button" className="far fa-heart fa-8x" style={{ color: "white", fontSize: 30 }} aria-controls="fade-menu-liked" aria-haspopup="true" onClick={handleClick1} />
 
           {user ? (
             <IconButton aria-controls="fade-menu-liked" aria-haspopup="true" onClick={handleClickLoggedIn}>
               <HeaderProfileWidget user={user} />{" "}
             </IconButton>
           ) : (
-            <IconButton id="profile-button" Style="color: white; font-size:30px" className="far fa-user fa-5x" size="medium" onClick={() => history.push("/login")} />
+            <IconButton id="profile-button" style={{ color: "white", fontSize: 30 }} className="far fa-user fa-5x" size="medium" onClick={() => history.push("/login")} />
           )}
         </div>
       </div>
 
       <Menu id="fade-menu-liked" anchorEl={anchorEl1} keepMounted open={open1} onClose={handleClose1} getContentAnchorEl={null} anchorOrigin={{ vertical: "bottom", horizontal: "center" }} transformOrigin={{ vertical: "top", horizontal: "center" }} TransitionComponent={Fade}>
         <MenuItem onClick={handleClose1}>
-          <Icon className="far fa-play-circle" size="small" Style="color: black; padding-right:10px;" />
+          <Icon className="far fa-play-circle" size="small" style={{ color: "black", paddingRight: 10 }} />
           Lil Skies - Red Roses
         </MenuItem>
         <MenuItem onClick={handleClose1}>
-          <Icon className="far fa-play-circle" size="small" Style="color: black; padding-right:10px;" />
+          <Icon className="far fa-play-circle" size="small" style={{ color: "black", paddingRight: 10 }} />
           Drake - The Motion
         </MenuItem>
         <MenuItem onClick={handleClose1}>
-          <Icon className="far fa-play-circle" size="small" Style="color: black; padding-right:10px;" />
+          <Icon className="far fa-play-circle" size="small" style={{ color: "black", paddingRight: 10 }} />
           Bob Marley - Is This Love
         </MenuItem>
       </Menu>

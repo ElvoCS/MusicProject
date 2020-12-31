@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./HeaderProfileWidget.css";
+import "./styles/HeaderProfileWidget.css";
 
 const HeaderProfileWidget = ({ user }) => {
   const [photoURL_, setPhotoURL] = useState("");

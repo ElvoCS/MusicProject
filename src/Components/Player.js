@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import music from "./music.png";
-import "./Player.css";
+import music from "../res/music_white.png";
+import "./styles/Player.css";
 import PlayCircleOutlineIcon from "@material-ui/icons/PlayCircleOutline";
 import PauseCircleOutlineIcon from "@material-ui/icons/PauseCircleOutline";
 import SkipPreviousIcon from "@material-ui/icons/SkipPrevious";
@@ -156,13 +156,13 @@ class Player extends Component {
               <p>Track: {trackName}</p>
               <p>Album: {albumName}</p>
               <p>
-                <button Style={"color: transparent; background-color: transparent; border-color: transparent; cursor: default;"} onClick={() => this.onPrevClick()}>
+                <button style={{ color: "transparent", backgroundColor: "transparent", borderColor: "transparent", cursor: "default" }} onClick={() => this.onPrevClick()}>
                   <SkipPreviousIcon className="svg_icons" style={{ color: "white" }} />
                 </button>
-                <button Style={"color: transparent; background-color: transparent; border-color: transparent; cursor: default;"} onClick={() => this.onPlayClick()}>
+                <button style={{ color: "transparent", backgroundColor: "transparent", borderColor: "transparent", cursor: "default" }} onClick={() => this.onPlayClick()}>
                   {playing ? <PauseCircleOutlineIcon className="svg_icons" /> : <PlayCircleOutlineIcon className="svg_icons" />}
                 </button>
-                <button Style={"color: transparent; background-color: transparent; border-color: transparent; cursor: default;"} onClick={() => this.onNextClick()}>
+                <button style={{ color: "transparent", backgroundColor: "transparent", borderColor: "transparent", cursor: "default" }} onClick={() => this.onNextClick()}>
                   <SkipNextIcon className="svg_icons" />
                 </button>
               </p>
@@ -180,7 +180,7 @@ class Player extends Component {
                 <input className="input" type="text" value={token} onChange={(e) => this.setState({ token: e.target.value })} />
               </p>
               <p>
-                <button Style={" background-color: transparent; border-color: transparent; cursor: default;"} onClick={() => this.handleLogin()}>
+                <button style={{ backgroundColor: " transparent", borderColor: " transparent", cursor: "default" }} onClick={() => this.handleLogin()}>
                   <VpnKeyIcon className="svg_icons" />
                 </button>
               </p>
