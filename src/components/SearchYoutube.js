@@ -18,13 +18,14 @@ function SearchYoutube(data) {
   }, [songName, artistName]);
 
   const searchSong = async () => {
+    dispatch(setVideoID("JFm7YDVlqnI"));
+    /*  
     let term = artistName + " " + songName;
-    console.log(term);
-    await YTSearch({ key: "AIzaSyCGfrAHXk8YHxl9FKaB8FTof1bgIvnFvFw", term: term }, (videos) => {
+     await YTSearch({ key: "AIzaSyCGfrAHXk8YHxl9FKaB8FTof1bgIvnFvFw", term: term }, (videos) => {
       if (videos.length > 0) {
         dispatch(setVideoID(videos[0].id.videoId));
       }
-    });
+    });*/
   };
 
   return (

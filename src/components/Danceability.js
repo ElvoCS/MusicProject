@@ -3,9 +3,10 @@ import "../pages/styles/Song.css";
 import { Credentials } from "../Credentials";
 import { Card } from "@material-ui/core";
 import axios from "axios";
-import { XYPlot, VerticalBarSeries, XAxis, YAxis } from "react-vis";
+import { XYPlot, VerticalBarSeries, XAxis, YAxis, LineSeries } from "react-vis";
 import { useDispatch, useSelector } from "react-redux";
 import { setSpotifyID } from "../redux/actions";
+import "react-vis/dist/style.css";
 
 function Danceability() {
   const [danceability, setDanceability] = useState();
@@ -32,15 +33,13 @@ function Danceability() {
       method: "POST",
     })
       .then((tokenResponse) => {
-        console.log("test", spotifyID);
         axios(`https://api.spotify.com/v1/audio-features/` + spotifyID, {
           method: "GET",
           headers: { Authorization: "Bearer " + tokenResponse.data.access_token },
         })
           .then((tracksResponse) => {
-            console.log(tracksResponse);
             if (tracksResponse != undefined) {
-              setDanceability(tracksResponse.data.danceability);
+              setDanceability((parseFloat(tracksResponse.data.danceability) * 100).toFixed(1));
               searchSuccess = true;
             } else {
               searchSuccess = false;
@@ -55,6 +54,9 @@ function Danceability() {
       });
   };
 
+  const scale = (num, in_min, in_max, out_min, out_max) => {
+    return ((num - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min;
+  };
   const data = [
     { x: 0, y: 0 },
     { x: 1, y: 17.64 },
@@ -87,7 +89,7 @@ function Danceability() {
           </div>
           <div className="song_card_title">
             <h4 style={{ margin: 5, fontSize: 15 }}>
-              {songName} : {parseFloat(danceability) * 100}% danceable
+              {songName} : {danceability}% danceable
             </h4>
           </div>
           <div className="graph_description">
@@ -99,10 +101,23 @@ function Danceability() {
             <div className="y_axis_label">
               <h2>Frequency (Hz)</h2>
             </div>
-            <XYPlot height={300} width={600} color="#336bf2" xDomain={[0, 20]} yDomain={[0, 1000]} margin={{ left: 60 }}>
+            <XYPlot height={300} width={600} color="#336bf2" xDomain={[0, 20]} yDomain={[0, 1100]} margin={{ left: 60 }}>
               <XAxis title="" style={{ overflow: "show", padding: 5 }} xDomain={[0, 100]} />
               <YAxis style={{ overflow: "show", padding: 5 }} />
               <VerticalBarSeries data={data} />
+              {searchSuccess ? (
+                <h1>No danceability search success</h1>
+              ) : (
+                <LineSeries
+                  color="red"
+                  strokeWidth="6"
+                  title={danceability}
+                  data={[
+                    { x: scale(danceability, 0, 100, 0, 20), y: 0 },
+                    { x: scale(danceability, 0, 100, 0, 20), y: 1100 },
+                  ]}
+                />
+              )}
             </XYPlot>
           </div>
           <div className="x_axis_label">

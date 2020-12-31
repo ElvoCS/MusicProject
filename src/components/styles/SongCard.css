@@ -41,8 +41,10 @@
   padding: 10px;
   max-height: 250px;
   overflow-y: auto;
-  letter-spacing: 1.1px;
-  line-height: 1.6;
+  font-family: customHelveticaLight;
+  letter-spacing: 1px;
+  line-height: 1.5;
   padding-left: 25px;
   padding-right: 25px;
+  font-weight: 100;
 }

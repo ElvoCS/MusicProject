@@ -17,7 +17,6 @@ function CreateAccount() {
     const photoURL = "https://picsum.photos/seed/" + seed + "/200";
     try {
       const { user } = await firebase.auth().createUserWithEmailAndPassword(email_, password_);
-      console.log(displayName);
       generateUserDocument(user, { displayName, photoURL });
     } catch (err) {
       document.getElementById("error").innerHTML = err.message;

@@ -9,9 +9,9 @@ function SongCard(cardData) {
         <h4 style={{ margin: 5 }}>{cardData.title}</h4>
       </div>
       <div className="song_card_content">
-        <h4 className="song_card_text" style={{ margin: 5 }}>
+        <div className="song_card_text" style={{ margin: 5 }}>
           {cardData.bio}
-        </h4>
+        </div>
       </div>
     </Card>
   );

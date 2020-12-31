@@ -8,7 +8,6 @@ function Biography() {
   const songName = useSelector((state) => state.songName);
   const artistName = useSelector((state) => state.artistName);
   const [artistBio, setArtistBio] = useState("");
-  console.log(songName, artistName);
 
   useEffect(() => {
     if (songName.length > 0 && artistName.length > 0) audioDBSearch();
