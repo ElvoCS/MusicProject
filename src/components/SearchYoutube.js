@@ -13,9 +13,9 @@ function SearchYoutube(data) {
   let searchSuccess = false;
   const dispatch = useDispatch();
 
-  /*useEffect(() => {
+  useEffect(() => {
     if (songName.length > 0 && artistName.length > 0) searchSong();
-  }, [songName, artistName]);*/
+  }, [songName, artistName]);
 
   const searchSong = async () => {
     dispatch(setVideoID("JFm7YDVlqnI"));

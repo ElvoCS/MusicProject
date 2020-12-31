@@ -11,14 +11,19 @@ function Biography() {
 
   useEffect(() => {
     if (songName.length > 0 && artistName.length > 0) audioDBSearch();
-  }, [songName, artistName]);
+  }, [songName, artistName, artistBio]);
 
   const audioDBSearch = async () => {
     await axios(`https://theaudiodb.com/api/v1/json/1/search.php?s=` + artistName, {
       method: "GET",
     })
       .then((tracksResponse) => {
-        setArtistBio(tracksResponse.data.artists[0].strBiographyEN);
+        console.log(tracksResponse.data.artists[0]);
+        if (tracksResponse.data.artists.length > 0 && tracksResponse.data.artists[0].strBiographyEN.length > 0) {
+          setArtistBio(tracksResponse.data.artists[0].strBiographyEN);
+        } else {
+          setArtistBio("Biography currently Unavailable for this artist.");
+        }
       })
       .catch((error) => {
         console.log("AudioDB API call problem", error);
@@ -26,10 +31,8 @@ function Biography() {
   };
 
   return (
-    <div>
-      <div className="song_container_title_container">
-        <SongCard title={artistName + "'s Biography"} bio={artistBio} />
-      </div>
+    <div className="song_container_title_container">
+      <SongCard title={artistName + "'s Biography"} bio={artistBio} />
     </div>
   );
 }
