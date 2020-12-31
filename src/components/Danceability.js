@@ -90,6 +90,11 @@ function Danceability() {
               {songName} : {parseFloat(danceability) * 100}% danceable
             </h4>
           </div>
+          <div className="graph_description">
+            <div className="graph_description_text">
+              <h4>Danceability describes how suitable a track is for dancing based on a combination of musical elements including tempo, rhythm stability, beat strength, and overall regularity. A value of 0 is least danceable and 100 is most danceable. The distribution of values for this feature look like this.</h4>
+            </div>
+          </div>
           <div className="graph_card_content">
             <div className="y_axis_label">
               <h2>Frequency (Hz)</h2>
@@ -102,11 +107,6 @@ function Danceability() {
           </div>
           <div className="x_axis_label">
             <h2>Danceability (%) </h2>
-          </div>
-          <div className="graph_description">
-            <div className="graph_description_text">
-              <h4>Danceability describes how suitable a track is for dancing based on a combination of musical elements including tempo, rhythm stability, beat strength, and overall regularity. A value of 0 is least danceable and 100 is most danceable. The distribution of values for this feature look like this.</h4>
-            </div>
           </div>
         </Card>
       </div>
