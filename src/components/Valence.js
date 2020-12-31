@@ -96,7 +96,7 @@ function Danceability() {
           </div>
           <div className="graph_description">
             <div className="graph_description_text">
-              <h4>A measure from 0.0 to 1.0 describing the musical positiveness conveyed by a track. Tracks with high valence sound more positive (e.g. happy, cheerful, euphoric), while tracks with low valence sound more negative (e.g. sad, depressed, angry). The distribution of values for this feature look like this:</h4>
+              <h4>A measure from 0 to 100 describing the musical positiveness conveyed by a track. Tracks with high valence sound more positive (e.g. happy, cheerful, euphoric), while tracks with low valence sound more negative (e.g. sad, depressed, angry). The distribution of values for this feature look like this:</h4>
             </div>
           </div>
           <div className="graph_card_content">
