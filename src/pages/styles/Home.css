@@ -25,6 +25,11 @@
   justify-content: left;
   margin-top: 20px;
 }
+.profile_pic_home {
+  display: block;
+  border-radius: 50%;
+  border: inset 5px #336bf2;
+}
 
 .home_right {
   flex: 4; /* flex-grow, flex-shrink, flex-basis */

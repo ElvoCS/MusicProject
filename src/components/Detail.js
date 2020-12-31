@@ -1,9 +1,12 @@
 import React from "react";
 import "./styles/Detail.css";
+import { useHistory } from "react-router";
 
 const Detail = ({ track }) => {
+  let history = useHistory();
+
   return (
-    <div className="song_card">
+    <div className="song_card" onClick={() => history.push("/song/" + track.artists[0].name + " " + track.name)}>
       <img width="100" src={track.album.images[0].url} alt={track.name} className="song_thumbnail"></img>
       <label htmlFor={track.name} className="song_name">
         {track.name}

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import "./styles/Home.css";
 import { Button, IconButton, Card } from "@material-ui/core";
 import { Link } from "react-router-dom";
@@ -11,6 +11,16 @@ import { UserContext } from "../providers/UserProvider";
 
 function Home() {
   const user = useContext(UserContext);
+  const [displayName, setDisplayName] = useState("");
+  const [photoURL, setPhotoURL] = useState("");
+
+  useEffect(() => {
+    if (user) {
+      const { displayName, photoURL } = user;
+      setDisplayName(displayName);
+      setPhotoURL(photoURL);
+    }
+  }, [user]);
 
   const loadLogin = () => {
     window.location.href = "./Login";
@@ -28,17 +38,29 @@ function Home() {
         </div>
 
         <div className="home_right">
-          <h2 style={{ marginTop: 0, fontSize: 25 }}>Stream music and view song data now!</h2>
-          <h4 style={{ marginTop: 0, fontSize: 16 }}> Log in or create an account.</h4>
+          {user ? (
+            <div>
+              <div className="profile_pic_container">
+                <img className="profile_pic_home" src={photoURL} width="100" style={{ marginTop: 30 }} alt="profile" />
+              </div>
+              <h2 style={{ fontSize: 25 }}>Welcome to Notify {displayName}!</h2>
+              <h4 style={{ fontSize: 15 }}>Search for an artist or a song now using the search bar or view a popular song from the card below</h4>
+            </div>
+          ) : (
+            <div>
+              <h2 style={{ marginTop: 0, fontSize: 25 }}>Stream music and view song data now!</h2>
+              <h4 style={{ marginTop: 0, fontSize: 16 }}> Log in or create an account.</h4>
 
-          <div style={{ width: "100%", fontFamily: "customHelvetica" }}>
-            <Button variant="contained" style={{ fontFamily: "customHelvetica", marginRight: 20 }} size="medium" onClick={loadLogin}>
-              Log In
-            </Button>
-            <Button variant="contained" style={{ backgroundColor: "#336bf2", color: "white", fontFamily: "customHelvetica" }} size="medium" onClick={loadCreateAccount}>
-              Create an Account
-            </Button>
-          </div>
+              <div style={{ width: "100%", fontFamily: "customHelvetica" }}>
+                <Button variant="contained" style={{ fontFamily: "customHelvetica", marginRight: 20 }} size="medium" onClick={loadLogin}>
+                  Log In
+                </Button>
+                <Button variant="contained" style={{ backgroundColor: "#336bf2", color: "white", fontFamily: "customHelvetica" }} size="medium" onClick={loadCreateAccount}>
+                  Create an Account
+                </Button>
+              </div>
+            </div>
+          )}
         </div>
       </div>
       <div className="info_container">
@@ -55,7 +77,7 @@ function Home() {
             <img src={data} alt="Data" className="" height="100" style={{ paddingLeft: 10 }}></img>
           </div>
           <div style={{ width: 200 }}>
-            <h4 style={{ marginBottom: 30 }}>Get interesting data and facts about the artist.</h4>
+            <h4 style={{ marginBottom: 30 }}>View interesting data and facts about the artist.</h4>
           </div>
         </div>
       </div>

@@ -16,6 +16,12 @@
 }
 
 @font-face {
+  font-family: customHelveticaLight;
+  font-weight: lighter;
+  src: url("./fonts/HelveticaRoundedLTStd-Bd.otf");
+}
+
+@font-face {
   font-family: customHelvetica2;
   src: url("./fonts/HelveticaRoundedLTStd-BdCn.otf");
 }
