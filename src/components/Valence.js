@@ -103,7 +103,7 @@ function Danceability() {
             <div className="y_axis_label">
               <h2>Frequency (Hz)</h2>
             </div>
-            <XYPlot height={300} width={600} color="#336bf2" xDomain={[0, 20]} yDomain={[0, 700]} margin={{ left: 60 }}>
+            <XYPlot height={300} width={600} color="#0079BF" xDomain={[0, 20]} yDomain={[0, 700]} margin={{ left: 60 }}>
               <XAxis title="" style={{ overflow: "show", padding: 5 }} xDomain={[0, 100]} />
               <YAxis style={{ overflow: "show", padding: 5 }} />
               <VerticalBarSeries data={data} />
@@ -111,8 +111,8 @@ function Danceability() {
                 <h1>No valence search success</h1>
               ) : (
                 <LineSeries
-                  color="red"
-                  strokeWidth="6"
+                  color="#FF495C"
+                  strokeWidth="4"
                   title={valence}
                   data={[
                     { x: scale(valence, 0, 100, 0, 20), y: 0 },

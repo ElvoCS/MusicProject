@@ -27,8 +27,7 @@ function Danceability() {
     await axios("https://accounts.spotify.com/api/token", {
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
-        Authorization:
-          "Basic " + btoa(spotify.ClientId + ":" + spotify.ClientSecret),
+        Authorization: "Basic " + btoa(spotify.ClientId + ":" + spotify.ClientSecret),
       },
       data: "grant_type=client_credentials",
       method: "POST",
@@ -86,10 +85,7 @@ function Danceability() {
   return (
     <div>
       <div className="graph_container">
-        <Card
-          className="graph-card"
-          style={{ borderRadius: 30, color: "black" }}
-        >
+        <Card className="graph-card" style={{ borderRadius: 30, color: "black" }}>
           <div className="song_card_title">
             <h4 style={{ margin: 5, fontSize: 20 }}>Danceability</h4>
           </div>
@@ -100,9 +96,7 @@ function Danceability() {
           </div>
           <div className="graph_description">
             <div className="graph_description_text">
-
               <h4>Danceability describes how suitable a track is for dancing based on a combination of musical elements including tempo, rhythm stability, beat strength, and overall regularity. A value of 0 is least danceable and 100 is most danceable. The distribution of values for this feature look like this.</h4>
-
             </div>
           </div>
           <div className="graph_card_content">
@@ -110,7 +104,7 @@ function Danceability() {
               <h2>Frequency (Hz)</h2>
             </div>
 
-            <XYPlot height={300} width={600} color="#336bf2" xDomain={[0, 20]} yDomain={[0, 1100]} margin={{ left: 60 }}>
+            <XYPlot height={300} width={600} color="#0079BF" xDomain={[0, 20]} yDomain={[0, 1100]} margin={{ left: 60 }}>
               <XAxis title="" style={{ overflow: "show", padding: 5 }} xDomain={[0, 100]} />
               <YAxis style={{ overflow: "show", padding: 5 }} />
               <VerticalBarSeries data={data} />
@@ -118,8 +112,8 @@ function Danceability() {
                 <h1>No danceability search success</h1>
               ) : (
                 <LineSeries
-                  color="red"
-                  strokeWidth="6"
+                  color="#FF495C"
+                  strokeWidth="4"
                   title={danceability}
                   data={[
                     { x: scale(danceability, 0, 100, 0, 20), y: 0 },

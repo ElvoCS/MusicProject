@@ -28,7 +28,7 @@
 .profile_pic_home {
   display: block;
   border-radius: 50%;
-  border: inset 5px #336bf2;
+  border: inset 5px #0079bf;
 }
 
 .home_right {
@@ -70,6 +70,7 @@
   flex: 1;
   padding: 0px;
   margin: 0px;
+  color: #0079bf;
 }
 
 .home_info_container_left {

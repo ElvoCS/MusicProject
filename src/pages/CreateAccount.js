@@ -31,6 +31,7 @@ function CreateAccount() {
         setEmail("");
         setPassword("");
         setDisplayName("");
+
         history.push("/");
       } else {
         // No user is signed in.
@@ -62,7 +63,7 @@ function CreateAccount() {
         <br></br>
 
         <div style={{ display: "flex", textAlign: "center", justifyContent: "center", alignItems: "center", marginBottom: 50 }}>
-          <Button onClick={(e) => signUpWithEmailAndPassword(e, displayName, email, password)} size="small" variant="contained" style={{ backgroundColor: "#336bf2", color: "white", marginRight: 30, fontFamily: "customHelvetica" }}>
+          <Button onClick={(e) => signUpWithEmailAndPassword(e, displayName, email, password)} size="small" variant="contained" style={{ backgroundColor: "#0079BF", color: "white", marginRight: 30, fontFamily: "customHelvetica" }}>
             Create Account
           </Button>
           <Button variant="contained" size="small" style={{ fontFamily: "customHelvetica", textAlign: "center" }} onClick={() => (window.location.href = "./Login")}>

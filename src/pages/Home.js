@@ -18,8 +18,10 @@ function Home() {
     if (user) {
       const { displayName, photoURL } = user;
       setDisplayName(displayName);
+      console.log("name: ", displayName, photoURL);
       setPhotoURL(photoURL);
     }
+    console.log("user; ", user);
   }, [user]);
 
   const loadLogin = () => {
@@ -55,7 +57,7 @@ function Home() {
                 <Button variant="contained" style={{ fontFamily: "customHelvetica", marginRight: 20 }} size="medium" onClick={loadLogin}>
                   Log In
                 </Button>
-                <Button variant="contained" style={{ backgroundColor: "#336bf2", color: "white", fontFamily: "customHelvetica" }} size="medium" onClick={loadCreateAccount}>
+                <Button variant="contained" style={{ backgroundColor: "#0079BF", color: "white", fontFamily: "customHelvetica" }} size="medium" onClick={loadCreateAccount}>
                   Create an Account
                 </Button>
               </div>

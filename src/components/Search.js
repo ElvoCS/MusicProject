@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { Credentials } from "../Credentials";
 import axios from "axios";
 import { useParams } from "react-router";
@@ -8,9 +8,13 @@ import { setSongName, setArtistName, setSpotifyID } from "../redux/actions";
 import Biography from "./Biography";
 import Danceability from "./Danceability";
 import Valence from "./Valence";
+import { UserContext } from "../providers/UserProvider";
+import firebase from "firebase";
 
 function Search() {
+  const user = useContext(UserContext);
   const spotify = Credentials();
+  const [uid_, setUid] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
   const [spotifySearchTerm, setSpotifySearchTerm] = useState("");
   let searchSuccess = false;
@@ -18,20 +22,30 @@ function Search() {
   let st_temp = useParams();
 
   useEffect(() => {
-    setSearchTerm(st_temp.id);
-    setSpotifySearchTerm(st_temp.id.replaceAll(" ", "%20"));
-    if (searchTerm.length > 0 && spotifySearchTerm.length > 0) {
-      spotifySearch();
+    if (user) {
+      console.log(user);
+      const { uid } = user;
+      console.log(uid);
+      setUid(uid);
+      setSearchTerm(st_temp.id);
+      setSpotifySearchTerm(st_temp.id.replaceAll(" ", "%20"));
+      if (searchTerm.length > 0 && spotifySearchTerm.length > 0) {
+        spotifySearch();
+      }
     }
-  }, [searchTerm, spotifySearchTerm]);
+  }, [user, searchTerm, spotifySearchTerm]);
 
-  const saveSearch = (event) => {
-    firebase.firestore().collection("messages").add({
-      message: input,
-      username: displayName,
-      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-    });
-    setInput("");
+  const saveSearch = async (song_name, artist_name) => {
+    if (!user) return;
+
+    firebase
+      .firestore()
+      .collection("History")
+      .add({
+        uid: uid_,
+        history_text: artist_name + " " + song_name,
+        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+      });
   };
 
   const spotifySearch = async () => {
@@ -52,11 +66,14 @@ function Search() {
         })
           .then((tracksResponse) => {
             if (tracksResponse.data.tracks.items.length > 0) {
-              console.log(tracksResponse);
-              dispatch(setSongName(tracksResponse.data.tracks.items[0].name));
-              dispatch(setArtistName(tracksResponse.data.tracks.items[0].artists[0].name));
-              console.log(tracksResponse.data.tracks.items[0].id);
-              dispatch(setSpotifyID(tracksResponse.data.tracks.items[0].id));
+              var songName = tracksResponse.data.tracks.items[0].name;
+              var artistName = tracksResponse.data.tracks.items[0].artists[0].name;
+              var id = tracksResponse.data.tracks.items[0].id;
+
+              dispatch(setSongName(songName));
+              dispatch(setArtistName(artistName));
+              dispatch(setSpotifyID(id));
+              saveSearch(songName, artistName);
               searchSuccess = true;
             } else {
               searchSuccess = false;
@@ -73,7 +90,10 @@ function Search() {
   return (
     <div>
       {searchSuccess ? (
-        console.log("SPOTIFY SEARCH RESULTS EMPTY")
+        <div>
+          {console.log("SPOTIFY SEARCH RESULTS EMPTY")}
+          <h2>No search results found. Please try another search.</h2>
+        </div>
       ) : (
         <div>
           <SearchYoutube />

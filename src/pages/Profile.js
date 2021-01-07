@@ -7,7 +7,7 @@ import ReactRoundedImage from "react-rounded-image";
 import profilePic from "../res/profile-pic.jpg"; // Place Holder
 import { UserContext } from "../providers/UserProvider";
 import { useHistory } from "react-router";
-import firebase from "../config/fire";
+import firebase from "firebase";
 
 function Profile() {
   const user = useContext(UserContext);
@@ -16,6 +16,7 @@ function Profile() {
   const [email_, setEmail] = useState("");
   const [displayName_, setDisplayName] = useState("");
   const [photoURL_, setPhotoURL] = useState("");
+  const [historyList, setHistoryList] = useState([]);
 
   useEffect(() => {
     if (user) {
@@ -40,6 +41,17 @@ function Profile() {
       });
   };
 
+  useEffect(() => {
+    firebase
+      .firestore()
+      .collection("History")
+      .orderBy("timestamp", "desc")
+      .onSnapshot((snapshot) => {
+        console.log(snapshot.docs);
+        setHistoryList(snapshot.docs.map((doc) => ({ text: doc.history_text })));
+      });
+  }, []);
+
   return (
     <div className="profile">
       <Card className=" profile_card" style={{ borderRadius: 30, color: "black" }}>
@@ -52,19 +64,22 @@ function Profile() {
             <br />
 
             <ListItem>
-              Username: &nbsp; <div style={{ color: "#336bf2" }}> {displayName_}</div>
+              Username: &nbsp; <div style={{ color: "#0079BF" }}> {displayName_}</div>
             </ListItem>
             <ListItem>
-              Email: &nbsp;<div style={{ color: "#336bf2" }}>{email_}</div>
+              Email: &nbsp;<div style={{ color: "#0079BF" }}>{email_}</div>
             </ListItem>
             <br />
-            <Button variant="contained" style={{ fontFamily: "customHelvetica", backgroundColor: "#336bf2", color: "white", marginRight: 20 }} onClick={() => profile_logout()}>
+            <Button variant="contained" style={{ fontFamily: "customHelvetica", backgroundColor: "#0079BF", color: "white", marginRight: 20 }} onClick={() => profile_logout()}>
               Log out
             </Button>
 
             <Button variant="contained" color="secondary" style={{ fontFamily: "customHelvetica" }} onClick={() => profile_deleteAccount()}>
               Delete Account
             </Button>
+            <Card className=" profile_card" style={{ borderRadius: 30, color: "black" }}>
+              {historyList.map(({ history_text }) => console.log(historyList))}
+            </Card>
           </List>
         </div>
       </Card>

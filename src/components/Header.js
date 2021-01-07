@@ -78,7 +78,7 @@ function Header() {
         <div className="headerSearch">
           <div className="searchBar">
             <div style={{ flex: 1 }} className="searchIconContainer">
-              <i className="fas fa-search  fa-lg" style={{ color: "#336bf2" }}></i>
+              <i className="fas fa-search  fa-lg" style={{ color: "#0079BF" }}></i>
             </div>
             <div style={{ flex: 20 }} className="searchTextArea">
               <form style={{ width: "100%" }}>

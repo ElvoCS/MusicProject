@@ -58,7 +58,7 @@ function Login() {
         <br></br>
 
         <div style={{ display: "flex", textAlign: "center", justifyContent: "center", alignItems: "center", marginBottom: 50 }}>
-          <Button onClick={(e) => logInWithEmailAndPassword(e, email, password)} variant="contained" size="small" style={{ backgroundColor: "#336bf2", color: "white", marginRight: 30, fontFamily: "customHelvetica" }}>
+          <Button onClick={(e) => logInWithEmailAndPassword(e, email, password)} variant="contained" size="small" style={{ backgroundColor: "#0079BF", color: "white", marginRight: 30, fontFamily: "customHelvetica" }}>
             Log In
           </Button>
           <Button variant="contained" size="small" style={{ fontFamily: "customHelvetica", textAlign: "center" }} onClick={() => (window.location.href = "./CreateAccount")}>

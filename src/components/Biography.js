@@ -18,7 +18,6 @@ function Biography() {
       method: "GET",
     })
       .then((tracksResponse) => {
-        console.log(tracksResponse.data.artists[0]);
         if (tracksResponse.data.artists.length > 0 && tracksResponse.data.artists[0].strBiographyEN.length > 0) {
           setArtistBio(tracksResponse.data.artists[0].strBiographyEN);
         } else {

@@ -11,7 +11,7 @@ import "./styles/MediaControlCard.css";
 function MediaControlCard() {
   return (
     <div className="details">
-      <Card className="Card" style={{ borderRadius: 30, backgroundColor: "336bf2", marginTop: 80 }}>
+      <Card className="Card" style={{ borderRadius: 30, backgroundColor: "0079BF", marginTop: 80 }}>
         <CardContent className="mediaContent__container">
           <div className="mediaContent">
             <Typography component="h5" variant="h5">
