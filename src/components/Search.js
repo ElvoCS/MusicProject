@@ -23,9 +23,9 @@ function Search() {
 
   useEffect(() => {
     if (user) {
-      console.log(user);
+      // console.log(user);
       const { uid } = user;
-      console.log(uid);
+      //  console.log(uid);
       setUid(uid);
       setSearchTerm(st_temp.id);
       setSpotifySearchTerm(st_temp.id.replaceAll(" ", "%20"));

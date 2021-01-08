@@ -37,7 +37,7 @@ export const generateUserDocument = async (user, additionalData) => {
 
   if (!snapshot.exists) {
     const { email, displayName, photoURL } = user;
-    console.log("at document creation: ", displayName, photoURL);
+    //console.log("at document creation: ", displayName, photoURL);
     try {
       await userRef.set({
         email,

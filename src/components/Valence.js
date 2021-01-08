@@ -32,7 +32,7 @@ function Danceability() {
       method: "POST",
     })
       .then((tokenResponse) => {
-        console.log("test", spotifyID);
+       // console.log("test", spotifyID);
         axios(`https://api.spotify.com/v1/audio-features/` + spotifyID, {
           method: "GET",
           headers: {
@@ -40,7 +40,7 @@ function Danceability() {
           },
         })
           .then((tracksResponse) => {
-            console.log(tracksResponse);
+           // console.log(tracksResponse);
             if (tracksResponse != undefined) {
               setValence((parseFloat(tracksResponse.data.valence) * 100).toFixed(1));
               searchSuccess = true;
