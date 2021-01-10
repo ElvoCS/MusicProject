@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import "./styles/Home.css";
-import { Button, IconButton, Card } from "@material-ui/core";
+import { Button, Card } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import bigLogo from "../res/logo_big.png"; // Tell webpack this JS file uses this image
 import music from "../res/music.png"; // Tell webpack this JS file uses this image

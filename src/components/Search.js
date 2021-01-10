@@ -10,8 +10,10 @@ import Danceability from "./Danceability";
 import Valence from "./Valence";
 import { UserContext } from "../providers/UserProvider";
 import firebase from "firebase";
+import { useHistory } from "react-router";
 
 function Search() {
+  let history = useHistory();
   const user = useContext(UserContext);
   const spotify = Credentials();
   const [uid_, setUid] = useState("");
@@ -23,15 +25,15 @@ function Search() {
 
   useEffect(() => {
     if (user) {
-      // console.log(user);
       const { uid } = user;
-      //  console.log(uid);
       setUid(uid);
       setSearchTerm(st_temp.id);
       setSpotifySearchTerm(st_temp.id.replaceAll(" ", "%20"));
       if (searchTerm.length > 0 && spotifySearchTerm.length > 0) {
         spotifySearch();
       }
+    } else {
+      history.push("/login");
     }
   }, [user, searchTerm, spotifySearchTerm]);
 

@@ -4,10 +4,45 @@
 }
 .message__form {
   text-align: center;
-  position: fixed;
-  bottom: 0;
   z-index: 1;
-  background-color: #e9e9eb;
+  background-color: #0079bf;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 10;
+  margin-bottom: 10px;
+  min-width: 30%;
+  flex: 1;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+.message__form ::placeholder {
+  color: white;
+}
+.inputText {
+  color: white;
+  font-family: "customHelvetica";
+  padding: none;
+  border: none;
+  font-size: large;
+  margin-left: 20px;
+}
+.messenger_container {
+  display: flex;
+  align-items: center;
   width: 100%;
-  margin: 20px;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.messages {
+  flex: 5;
+  width: 100%;
+  max-height: 50vh;
+  overflow-y: scroll;
+  background-color: white;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }

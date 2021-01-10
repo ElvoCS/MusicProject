@@ -4,7 +4,6 @@ import LocationOnIcon from "@material-ui/icons/LocationOn";
 import PermIdentityIcon from "@material-ui/icons/PermIdentity";
 import { Button, Card, List, ListItem, ListItemText } from "@material-ui/core";
 import ReactRoundedImage from "react-rounded-image";
-import profilePic from "../res/profile-pic.jpg"; // Place Holder
 import { UserContext } from "../providers/UserProvider";
 import { useHistory } from "react-router";
 import firebase from "firebase";
@@ -77,9 +76,6 @@ function Profile() {
             <Button variant="contained" color="secondary" style={{ fontFamily: "customHelvetica" }} onClick={() => profile_deleteAccount()}>
               Delete Account
             </Button>
-            <Card className=" profile_card" style={{ borderRadius: 30, color: "black" }}>
-              {historyList.map(({ history_text }) => console.log(historyList))}
-            </Card>
           </List>
         </div>
       </Card>

@@ -7,7 +7,7 @@ const Detail = ({ track }) => {
 
   return (
     <div className="song_card" onClick={() => history.push("/song/" + track.artists[0].name + " " + track.name)}>
-      <img width="100" src={track.album.images[0].url} alt={track.name} className="song_thumbnail"></img>
+      <img width="100" height="100" src={track.album.images[0].url} alt={track.name} className="song_thumbnail"></img>
       <label htmlFor={track.name} className="song_name">
         {track.name}
       </label>

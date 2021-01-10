@@ -54,13 +54,25 @@ function Header() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    history.push("/song/" + value);
-    window.location.reload(false);
+    if (user) {
+      history.push("/song/" + value);
+      //window.location.reload(false);
+    } else {
+      history.push("/login");
+    }
   };
 
   const handleKeypress = (e) => {
     if (e.keyCode === 13) {
       handleSubmit();
+    }
+  };
+
+  const gotoMessenger = () => {
+    if (user) {
+      history.push("/Messenger");
+    } else {
+      history.push("/login");
     }
   };
 
@@ -78,7 +90,7 @@ function Header() {
         <div className="headerSearch">
           <div className="searchBar">
             <div style={{ flex: 1 }} className="searchIconContainer">
-              <i className="fas fa-search  fa-lg" style={{ color: "#0079BF" }}></i>
+              <i className="fas fa-search  fa-lg"></i>
             </div>
             <div style={{ flex: 20 }} className="searchTextArea">
               <form style={{ width: "100%" }}>
@@ -92,7 +104,7 @@ function Header() {
         </div>
 
         <div className="headerNavigation">
-          <IconButton className="chat-button" style={{ color: "white", fontSize: "large" }} onClick={() => history.push("/Messenger")}>
+          <IconButton className="chat-button" style={{ color: "white", fontSize: "large" }} onClick={() => gotoMessenger()}>
             <ChatIcon />
           </IconButton>
 
