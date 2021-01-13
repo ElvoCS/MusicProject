@@ -4,7 +4,12 @@ import "./styles/HeaderProfileWidget.css";
 const HeaderProfileWidget = ({ user }) => {
   const [photoURL_, setPhotoURL] = useState("");
 
-  const { email, displayName, photoURL } = user;
+  useEffect(() => {
+    const { email, displayName, photoURL } = user;
+    if (user) {
+      setPhotoURL(photoURL);
+    }
+  }, [user]);
 
   return (
     <div>
