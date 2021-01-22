@@ -34,6 +34,7 @@ function App() {
                 <Route path="/login" exact component={Login} />
                 <Route path="/createAccount" exact component={CreateAccount} />
                 <Route path="/Messenger" exact component={Messenger} />
+                <Route path="/Player" exact component={Player}/>
                 <Route path="/" exact component={Home} />
               </Switch>
             </div>

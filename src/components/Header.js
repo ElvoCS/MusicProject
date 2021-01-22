@@ -75,6 +75,13 @@ function Header() {
       history.push("/login");
     }
   };
+  const goSpotifyPlaylist = () => {
+    if (user) {
+      history.push("/Player");
+    } else {
+      history.push("/login");
+    }
+  };
 
   return (
     <AppBar position="static">
@@ -107,6 +114,8 @@ function Header() {
           <IconButton className="chat-button" style={{ color: "white", fontSize: "large" }} onClick={() => gotoMessenger()}>
             <ChatIcon />
           </IconButton>
+
+          <IconButton onClick={() => goSpotifyPlaylist()}> <img className="spotify_logo"src="https://i.imgur.com/renTIy8.png" alt="spotifyLogo" /></IconButton>
 
           <IconButton id="heart-button" className="far fa-heart fa-8x" style={{ color: "white", fontSize: 30 }} aria-controls="fade-menu-liked" aria-haspopup="true" onClick={handleClick1} />
 
