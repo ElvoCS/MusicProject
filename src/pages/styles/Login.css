@@ -8,6 +8,11 @@
   display: flex;
   align-items: center;
   justify-content: left;
+  color: black;
+}
+
+input ::placeholder {
+  color: black;
 }
 
 .error {

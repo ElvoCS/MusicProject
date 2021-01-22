@@ -72,16 +72,16 @@ a {
 
   background-color: #008fe1;
 }
-input::placeholder {
+.inputField::placeholder {
   color: white;
 }
-input::-webkit-input-placeholder {
+.inputField::-webkit-input-placeholder {
   color: white;
 }
-input:-moz-placeholder {
+.inputField:-moz-placeholder {
   color: white;
 }
-input:focus {
+.inputField::focus {
   outline: none;
 }
 

@@ -13,7 +13,7 @@ const HeaderProfileWidget = ({ user }) => {
 
   return (
     <div>
-      <img className="rounded_profile" src={photoURL} />
+      <img className="rounded_profile" src={photoURL_} />
     </div>
   );
 };
